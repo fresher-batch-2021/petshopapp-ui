@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="pet.css">
+    
+
+</head>
+<body>
+    <header id="header"></header>
+    
+    <div class="register">
+        <form onsubmit="registerForm()">
+            <img src="./images/1665644.png" alt="user" width="20%" height="20%">
+            <h1>Create Account</h1>
+            <div class="reglabel">
+                 <label for="user name">User Name</label><br>
+                    <input type="text" name="name" id="name" required><br>
+                    <label for="email">Email</label><br>
+                    <input type="email" name="email" id="email" required><br>
+                    <label for="password">Create Password</label><br>
+                    <input type="password" name="password" id="password" required><br>
+                    <label for="password">Confirm Password</label><br>
+                    <input type="password" name="psw" id="psw" required><br><br>
+                    <button id="register.signin">sign up</button>
+                    <button id="register.cancel">
+                        <a href="login.html">cancel</a>
+                     </button>
+            </div>
+           
+        </form>
+    </div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+            $("#header").load("header.html");
+            function registerForm(){
+                alert("registerForm");
+                event.preventDefault();
+                const name=document.querySelector("#name").value;
+                const email=document.querySelector("#email").value;
+                const password=document.querySelector("#password").value;
+                const psw=document.querySelector("#psw").value;
+                console.log(name +" "+email +" "+ password +" "+ psw);
+                alert("register successfully");
+               window.location.href="login.html";
+                
+            }
+        </script>
+</body>
+
+</html>

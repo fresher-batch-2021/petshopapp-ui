@@ -1,0 +1,109 @@
+/* body{
+    background-image: url("./images/shutterstock_1048123303.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+} */
+body{
+    /* background-image: url(./images/shutterstock_1048123303.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat; */
+    margin: auto;
+    padding: auto;
+}
+.navbar{
+    background-color: darkgray;
+    text-align: center;
+    width: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: fixed; 
+}
+nav{
+    float: right;
+}
+nav li{
+    display: inline;
+}
+/* section{ 
+    margin: auto;
+    padding: auto;
+} */
+
+/* .indeximg{
+    position: relative;
+} */
+footer{
+    background-color: lightgrey;
+    text-align: center;
+}
+#footer.form{
+    display: inline;
+}
+
+/* login */
+.login{
+    background-color: lightgrey;
+    text-align: center;
+     /* margin: 100px 60px; */
+      position: relative;
+     top: 120px;
+     z-index: -2;
+   }
+
+#loginbutton{
+    
+    border-radius: 10%;
+}
+#login.signup{
+    border-radius: 10%;
+}
+/* register */
+.register{
+    background-color: lightgray;
+    text-align: center;
+    border: solid;
+    border-color: lightgrey;
+    position: relative;
+    top: 100px;
+    z-index: -1;
+    padding: 80px 0px;
+    
+    /* border: solid;
+    border-radius: 30px;
+    */
+}
+.reglabel{
+    padding: 5px;
+}
+#register.signin{
+    border-radius: 10%;
+}
+#resister.cancel{
+    border-radius: 10%;
+}
+/* forgetpassword */
+.forgetpsw{
+    text-align: center;
+    position: relative;
+    top: 100px;
+    z-index: -1;    
+}
+.frglabel{
+    padding: 5px;
+}
+#frg.reset{
+    border-radius: 10%;
+}
+#frg.close{
+    border-radius: 10%;
+}
+
+/* cart */
+
+
+/* contect */
+/* .contectform{
+    text-align: center;
+    margin: auto;
+    padding: auto;
+} */
