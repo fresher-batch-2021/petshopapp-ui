@@ -1,39 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+
 </head>
-<body>  
-        <header id="header"></header>
-        <div class="container">
-            <div class="left"><p>left side</p> </div>
-            <div class="body"><p>body side</p></div>
-        </div>
-        <!-- <div class="row"> -->
-            <!-- <h3>popular categories</h3> -->
-            <!-- <div class="indeximg"><img src="./images/shutterstock_1048123303.jpg" alt="image" width="100%" ></div> -->
-            <!-- <div class="column1"><img src="./images/UP_Sfeer_2021_0398_pot-01-2.jpg" alt="dogfood" > <br> <p>Dog Food</p> </div> -->
-            <!-- <div class="column2"></div> -->
-            <!-- <div class="column3"></div> -->
-        <!-- </div> -->
-        <footer> 
-            <div class="h2"><p>sign up and save</p> </div>
-            <div> <p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p></div>
-           <div id="footer.form"> <form action="contect.html">
-                <div><input type="email" name="email" id="email"></div>
-                <div><label for="email">Email</label></div>
-                <div><button type="submit">subscribe</button></div>
-            </form></div>
-        </footer>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script>
-                $("#header").load("header.html");
-        </script>
+
+<body>
+  <header id="header"></header>
+
+<div class="slideshow-container">
+  <div class="slide fade">
+    <img src="./images/slide1.jpg" alt="img">
+  </div>
+  <div class="slide fade">
+    <img src="./images/slide2.jpg" alt="img">
+  </div>
+  <div class="slide fade"><img src="./images/slide3.jpg" alt="img"></div>
+  <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a> -->
+
+</div>
+  <footer>
+    <div class="">
+      <h2>Sign Up and Save</h1>
+        <h4>Subscribe to get special offer, free givesaways and life time deals</h3>
+          <input type="text" name="subscribe" id="subscribe"> <button>Subscribe</button>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $("#header").load("header.html");
+
+  </script>
 </body>
 
 </html>
