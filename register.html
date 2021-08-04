@@ -13,10 +13,13 @@
     <header id="header"></header>
     
     <div class="register">
+        
         <form onsubmit="registerForm()">
-            <img src="./images/1665644.png" alt="user" width="20%" height="20%">
-            <h1>Create Account</h1>
-            <div class="reglabel">
+            <div class="regimg"><img src="./images/1665644.png" alt="user" width="20%" height="20%"></div>
+            
+            
+            <div class="regform">
+                    <h1>Create Account</h1>
                  <label for="user name">User Name</label><br>
                     <input type="text" name="name" id="name" required><br>
                     <label for="email">Email</label><br>
@@ -30,16 +33,13 @@
                         <a href="login.html">cancel</a>
                      </button>
             </div>
-           
         </form>
     </div>
-
-
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
             $("#header").load("header.html");
             function registerForm(){
-                alert("registerForm");
+                
                 event.preventDefault();
                 const name=document.querySelector("#name").value;
                 const email=document.querySelector("#email").value;
