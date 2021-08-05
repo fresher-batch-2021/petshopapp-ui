@@ -9,13 +9,16 @@ a{
 
 }
 body{
-    /* background-color: lightgray; */
+    background-color: lightgray;
 }
-
+header{
+    position: sticky;
+    top: 0;
+}
 .navbar{
     background-color: darkgray;
     height: 80px;
-
+    
 }
 .navbar img{
     width: 150px;
@@ -56,15 +59,16 @@ body{
 
 .slideshow-container{
     max-width: 1000px;
-    position: relative;
+    /* position: relative; */
     margin: auto;
 }
-img{
-    width: 100%;
-}
+
 .slide{
     
      display: inline; 
+}
+.slideimg{
+    width:100%;
 }
 .fade {
     -webkit-animation-name: fade;
@@ -89,7 +93,11 @@ footer{
     text-align: center;
     position:relative;
     width: 100%;
-    
+    list-style: none;
+}
+.footer li{
+    color: black;
+    display: inline;
 }
     /* position: fixed; */
     /* width: 100%;
