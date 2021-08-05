@@ -9,13 +9,16 @@ a{
 
 }
 body{
-    /* background-color: lightgray; */
+    background-color: lightgray;
 }
-
+header{
+    position: sticky;
+    top: 0;
+}
 .navbar{
     background-color: darkgray;
     height: 80px;
-
+    
 }
 .navbar img{
     width: 150px;
@@ -56,15 +59,16 @@ body{
 
 .slideshow-container{
     max-width: 1000px;
-    position: relative;
+    /* position: relative; */
     margin: auto;
 }
-img{
-    width: 100%;
-}
+
 .slide{
     
      display: inline; 
+}
+.slideimg{
+    width:100%;
 }
 .fade {
     -webkit-animation-name: fade;
@@ -87,9 +91,15 @@ img{
 footer{
     background-color: darkgrey;
     text-align: center;
-    position:relative;
+    /* position:fixed; */
+    bottom: 100%;
+    left: 0;
     width: 100%;
-    
+    list-style: none;
+}
+.footer li{
+    color: black;
+    display: inline;
 }
     /* position: fixed; */
     /* width: 100%;
@@ -177,3 +187,20 @@ background-color:darkgray;
     margin: auto;
     padding: auto;
 } */
+/* about */
+.about{
+    /* padding: 20px 0;
+    margin: 5px 0; */
+    text-align: center;
+    
+    /* position: relative; */
+}
+.about1{
+    /* background-color:; */
+    border: solid ;
+    /* float: left; */
+    display: inline-block;
+    width: 500px;
+    padding: 20px 40px;
+    
+}

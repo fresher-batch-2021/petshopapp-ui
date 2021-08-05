@@ -14,47 +14,48 @@
     <header id="header">
 
     </header>
+    
 
-   <div class="formlogin">
+    <div class="formlogin">
         <form onsubmit="loginform()">
 
-           <div class="loginimg"><img src="./images/1818401.png" alt="cat" width="30%" height="40%"></div> 
-           <div class="loginform">
+            <div class="loginimg"><img src="./images/1818401.png" alt="cat" width="30%" height="40%"></div>
+            <div class="loginform">
                 <h1>Welcome to login</h1>
                 <label for="username">User Name</label>
-            <br>
-            <input type="text" name="username" id="username" required>
-            <br>
+                <br>
+                <input type="text" name="username" id="username" required>
+                <br>
 
-            <label for="email">Email</label>
-            <br>
-            <input type="email" name="email" id="email" required>
-            <br>
+                <label for="email">Email</label>
+                <br>
+                <input type="email" name="email" id="email" required>
+                <br>
 
 
-            <label for="password">Password</label>
-            <br>
-            <input type="password" name="password" id="password" required>
-            <br>
-            <button class="lgbtn">login</button>
-            <button class="lgbtn">
+                <label for="password">Password</label>
+                <br>
+                <input type="password" name="password" id="password" required>
+                <br>
+                <button class="lgbtn">login</button>
+                <button class="lgbtn">
                     <a href="register.html">sign up</a>
-            </button><br>
-                <label><input type="checkbox">Remember me</label>
+                </button>
+                <!-- <label><input type="checkbox">Remember me</label> -->
             </div>
-            
+
             <div class="logincancel">
                 <button type="button" class="logcancel"><a href="index.html">cancel</a> </button>
                 <a href="forgetpassword.html">forget password?</a>
             </div>
-           
-        </form> 
-    </div>  
- 
+
+        </form>
+    </div>
+    <footer id="footer"></footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $("#header").load("header.html");
-
+        $("#footer").load("footer.html");
         function loginform() {
             event.preventDefault();
             const name = document.querySelector("#username").value;
@@ -66,9 +67,9 @@
             }
             else {
                 const data = {
-                    user: name,
-                    mail: email,
-                    psw: password,
+                    "user": name,
+                    "mail": email,
+                    "psw": password,    
                 };
                 console.log(data);
                 alert("successfully login");
