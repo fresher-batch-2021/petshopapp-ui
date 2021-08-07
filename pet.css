@@ -6,8 +6,19 @@
 }
 a{
     text-decoration: none;
+    color: black;
 
 }
+/* button{
+    margin: 0px auto;
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+} */
 body{
     background-color: lightgray;
 }
@@ -105,9 +116,10 @@ footer{
     /* width: 100%;
 
 /* login */
-/* .loginbody{
+.loginbody{
     background-color: lightgray;
-} */
+}
+
 .loginimg{
     text-align: center;
     margin:10px;
@@ -118,7 +130,7 @@ footer{
 .logincancel{
     text-align: center;
 }
-.formlogin{
+ .formlogin{
     margin: 20px 30%;
     padding: 20px 0px;
     border: solid;
@@ -126,7 +138,68 @@ footer{
 
 background-color:darkgray;
 
+} 
+/* .loginform{
+    height: 350px;
+    border: 2px solid red;
+    margin: 20px 400px 0px 400px;
+    position: relative;
 }
+.loginform h1{
+    text-align: center;
+}
+.loginimg{
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    margin-left: 45%;
+}
+.data{
+    display: block;
+    /* border: 2px solid red; */
+    /* height: 30px; */
+/* }  */
+/* input[type=password], input[type=email] 
+     { 
+
+        margin: 10px 100px 0px 100px;
+        padding: 12px 20px; 
+        display: block; 
+        border: 2px solid #D3D3D3; 
+        border-radius: 5px;
+        width: 400px;
+        box-sizing: border-box; 
+        margin-bottom: 20px;
+        border: 2px solid red;
+    }
+ label{
+     position: absolute;
+    
+     font-size: 18px;
+     margin-top: 20px;
+     padding-top:200px ;
+     margin-left: 20px;
+ }   
+ .loginbtn1{
+     align-items: center;
+     text-align: center;
+     position: absolute;
+     left: 200px; 
+     bottom: 20px;
+     padding: 5px; 
+     border: 2px solid black;
+     border-radius: 12px;
+     background-color: #fff; 
+ }
+ .loginbtn2 a{
+     position: absolute;
+     right: 200px;
+     bottom: 20px;
+     padding: 5px; 
+     border: 2px solid black;
+     border-radius: 12px;
+     background-color: #fff;
+ } */ 
 
 
 /* register */
