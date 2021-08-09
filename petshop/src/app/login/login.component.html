@@ -1,0 +1,77 @@
+<!-- <header id="header">
+
+</header> -->
+<!-- <app-header></app-header> -->
+<router-outlet></router-outlet>
+<div class="formlogin">
+    <form (ngSubmit)="login()">
+
+        <div class="loginimg"><img src="assets/images/1818401.png" alt="cat" width="30%" height="40%"></div>
+        <div class="loginform">
+            <h1>Welcome to login</h1>
+            <label for="email">Email</label>
+            <br>
+            <input type="email"[(ngModel)]="email" name="email" id="email" required>
+            <br>
+
+
+            <label for="password">Password</label>
+            <br>
+            <input type="password" [(ngModel)]="password" name="password" id="password" required>
+            <br>
+            <button class="lgbtn">login</button>
+            <button class="lgbtn">
+                <a href="/register">sign up</a>
+            </button>
+            <!-- <label><input type="checkbox">Remember me</label> -->
+        </div>
+
+        <div class="logincancel">
+            <!-- <button type="button" class="logcancel"><a href="index.html">cancel</a> </button> -->
+            <a href="forgetpassword.html">forget password?</a>
+        </div>
+
+    </form>
+</div>
+<footer id="footer"></footer>
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $("#header").load("header.html");
+ 
+    function loginform() {
+         event.preventDefault();
+        
+         
+    
+            // const username = document.getElementById("username").value;
+            const email = document.getElementById("email").value;
+   
+            const password = document.getElementById("password").value;
+                if(password == "thya@123"){
+                    alert("login successfull");
+                    window.location.href="index.html";
+                }
+                else{
+                    alert("password is incorrect");
+                } -->
+<!--                 
+        // const name = document.querySelector("#username").value;
+        // const email = document.querySelector("#email").value;
+        // const password = document.querySelector("#password").value;
+
+        // if (password.length < 8) {
+        //     alert("password must be in 8 character")
+        // }
+        // else {
+        //     const data = {
+        //         "user": name,
+        //         "mail": email,
+        //         "psw": password,    
+        //     };
+        //     console.log(data);
+        //     alert("successfully login");
+        //     window.location.href = "index.html";
+        // }
+    }
+    $("#footer").load("footer.html"); -->
+<!-- </script> -->

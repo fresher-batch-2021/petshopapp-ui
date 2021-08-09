@@ -1,0 +1,55 @@
+<div class="register">
+        
+    <form onsubmit="registerForm()">
+        <div class="regimg"><img src="./images/1665644.png" alt="user" width="20%" height="20%"></div>
+        
+        
+        <div class="regform">
+                <h1>Create Account</h1>
+             <label for="user name">User Name</label><br>
+                <input type="text" name="name" id="name" required><br>
+                <label for="email">Email</label><br>
+                <input type="email" name="email" id="email" required><br>
+                <label for="password">Create Password</label><br>
+                <input type="password" name="password" id="password" required><br>
+                <label for="password">Confirm Password</label><br>
+                <input type="password" name="confirmpassword" id="confirmpassword" required><br><br>
+                <button id="register.signin">sign up</button>
+                <button id="register.cancel">
+                    <a href="login.html">cancel</a>
+                 </button>
+        </div>
+    </form>
+</div>
+<footer id="footer"></footer>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+        $("#header").load("header.html");
+        $("#footer").load("footer.html");
+        function registerForm(){
+            
+            event.preventDefault();
+            const name=document.querySelector("#name").value;
+            const email=document.querySelector("#email").value;
+            const password=document.querySelector("#password").value;
+            const confirmpassword=document.querySelector("#confirmpassword").value;
+            if(password.length < 8){
+                alert("password must be 8 character");
+            }
+            else if(password!=confirmpassword){
+                alert("password and confirm password not matched")
+            }
+            else{
+                const data = {
+                    "Name":name,
+                    "Email":email,
+                    "password":password,
+                    "confirmpassword":confirmpassword
+                };
+            
+            console.log(data);
+            alert("register successfully");
+           window.location.href="login.html";
+            }
+        }
+    </script>
