@@ -12,38 +12,58 @@
 
 <body>
   <header id="header"></header>
-  
+
   <div class="slideshow-container">
-    <div class="slide flade ">
-      <img  src="./images/slide1.jpg" alt="img">
+
+    <div class="mySlides fade">
+
+      <img src="./images/slide1.jpg" style="width:100%">
+
+
     </div>
-    <div class="slide fade">
-      <img  src="./images/slide2.jpg" alt="img">
+    <div class="mySlides fade">
+
+      <img src="./images/slide2.jpg" style="width:100%">
+
     </div>
-    <div class="slide fade"><img  src="./images/slide3.jpg" alt="img"></div>
-    <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-<a class="next" onclick="plusSlides(1)">&#10095;</a> -->
+
+    <div class="mySlides fade">
+
+      <img src="./images/slide3.jpg" style="width:100%">
+
+    </div>
 
   </div>
-  <footer id="footer"></footer>
+  <div class="spacing"></div>
+  <div class="shopfordog">
+    <h1>shop for dog</h1>
+    
+  </div>
+
+  <!-- <footer id="footer"></footer> -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
     $("#header").load("header.html");
+
+    var slideIndex = 0;
+
+
+    function showSlides() {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1 }
+
+      slides[slideIndex - 1].style.display = "block";
+
+      setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+    showSlides();
     $("#footer").load("footer.html");
-    var slideindex=0;
-    function slideshow(){
-      
-    var i;
-    var slides = document.getElementsByClassName("slide");
-    for(i=0;i<slides.length;i++){
-       slides[i].style.display="none";
-    }
-    slideindex++;
-  if (slideindex > slides.length) {slideindex = 1}
-  slides[slideindex-1].style.display = "block";
-  setTimeout(showSlides, 2000);
-    }
-    slideshow();
   </script>
 </body>
 

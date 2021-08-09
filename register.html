@@ -15,23 +15,31 @@
     <div class="register">
         
         <form onsubmit="registerForm()">
-            <div class="regimg"><img src="./images/1665644.png" alt="user" width="20%" height="20%"></div>
-            
+                        
             
             <div class="regform">
+                <div class="regimg"><img src="./images/1665644.png" alt="user" width="20%" height="20%"></div>
+
                     <h1>Create Account</h1>
+                    <div class="reginput">
                  <label for="user name">User Name</label><br>
-                    <input type="text" name="name" id="name" required><br>
+                    <input type="text" name="name" id="name" required>
+                </div>
+                <div class="reginput">
                     <label for="email">Email</label><br>
                     <input type="email" name="email" id="email" required><br>
-                    <label for="password">Create Password</label><br>
+                </div> 
+                <div class="reginput"> <label for="password">Create Password</label><br>
                     <input type="password" name="password" id="password" required><br>
-                    <label for="password">Confirm Password</label><br>
-                    <input type="password" name="confirmpassword" id="confirmpassword" required><br><br>
+                </div> <div class="reginput">
+                <label for="password">Confirm Password</label><br>
+                
+                 <input type="password" name="confirmpassword" id="confirmpassword" required><br><br>
                     <button id="register.signin">sign up</button>
                     <button id="register.cancel">
                         <a href="login.html">cancel</a>
                      </button>
+                    </div>
             </div>
         </form>
     </div>
