@@ -7,7 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="pet.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./js/login.js"></script>
 </head>
 
 <body>
@@ -56,45 +60,11 @@
         </form>
     </div>
     <footer id="footer"></footer>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
     <script>
         $("#header").load("header.html");
      
-        function loginform() {
-             event.preventDefault();
-            
-             
         
-                // const username = document.getElementById("username").value;
-                const email = document.getElementById("email").value;
-       
-                const password = document.getElementById("password").value;
-                    if(password == "thya@123"){
-                        alert("login successfull");
-                        window.location.href="index.html";
-                    }
-                    else{
-                        alert("password is incorrect");
-                    }
-                    
-            // const name = document.querySelector("#username").value;
-            // const email = document.querySelector("#email").value;
-            // const password = document.querySelector("#password").value;
-
-            // if (password.length < 8) {
-            //     alert("password must be in 8 character")
-            // }
-            // else {
-            //     const data = {
-            //         "user": name,
-            //         "mail": email,
-            //         "psw": password,    
-            //     };
-            //     console.log(data);
-            //     alert("successfully login");
-            //     window.location.href = "index.html";
-            // }
-        }
         $("#footer").load("footer.html");
     </script>
 </body>

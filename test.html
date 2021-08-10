@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="spec">
+
+    </div>
+    
+    <script src="js/jquery.min.js"></script>
+    <script>
+        // const param=new URLSearchParams(window.location.search.substr(1));
+        // var Id=param.get("id");
+        var Id=1;
+        
+        let content="";
+        var images=[{id:1,imgUrl:"item1.jpg",price:100,name:"food"}];
+        for(let data of images){
+            if(data.id==Id){
+                content=`
+            
+                <img src="images/${data.imgUrl}">
+                <p>${data.price}</p>
+                <p>${data.name}</p>
+            
+            `;
+            }
+            document.querySelector(".spec").innerHTML=content;
+        }
+    </script>
+</body>
+</html>
