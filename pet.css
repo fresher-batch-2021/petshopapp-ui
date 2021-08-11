@@ -127,17 +127,21 @@ header{
 .row{
     
     display: inline-block;
-   
 }
 .items{
     /* border: solid; */
-    margin-right: 40px;
-    margin-left: 50px;
+    margin-right: 50px;
+    margin-left: 100px;
     display: inline-block;
     padding: 15px;
     border-radius: 3px;
 }
-
+.items p{
+    text-align: center;
+}
+.items span{
+    text-align: center;
+}
 
 .homeimage img{
     max-width: 100%;
@@ -176,7 +180,7 @@ footer{
     margin-left: 35%;
     margin-right: 35%;
     padding: 20px;
-    border: solid;
+    border: solid rgb(116, 116, 233);
     border-radius: 20px;
     /* background-color:#f4af1b; */
 }
