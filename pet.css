@@ -28,7 +28,7 @@ header{
 }
 .navbar{
    
-    background-color:#2196f3 ;
+    background-color:#3da6fc ;
     /* background-color: lightgreen; */
     height: 80px;
     
@@ -85,9 +85,8 @@ header{
     }
     .imgslide{
         width: 100%;
-        margin-top: 80px;
-        border: 2px solid red;
-        border-radius: 20px;
+        margin-top: 10px;
+        
   
       }
       .mySlides{
@@ -110,8 +109,22 @@ header{
       @media only screen and (max-width: 300px) {
         .text {font-size: 11px}
       } 
-  
 
+ #category{
+     text-align: center;
+     font-size: 20px;
+ }
+  .items1{
+    display: inline-block;
+    padding-top: 10px;
+    padding-bottom: 50px;
+    margin-right: 40px;
+    margin-left: 20px;
+  }
+  .items1 img{
+      width: 250px;
+  }
+  
 .spacing{
     margin-top: 500px;
 }
@@ -119,7 +132,7 @@ header{
     /* border: solid; */
     font-size: 40px;
     /* text-align: center; */
-    padding-left: 50px;
+    padding-left: 40px;
     margin-bottom: 20px;
 }
 .shopfordog{
@@ -130,11 +143,11 @@ header{
     display: inline-block;
 }
 .items{
-    /* border: solid; */
+    
     margin-right: 50px;
     margin-left: 100px;
     display: inline-block;
-    padding: 15px;
+    padding: 10px;
     border-radius: 3px;
 }
 .items p{
@@ -233,9 +246,9 @@ footer{
     margin-left: 35%;
     margin-right: 35%;
     padding-left: 50px;
-    border: solid;
+    border: solid rgb(116, 116, 233);
     border-radius: 20px;
-    background-color:darkgray;
+    /* background-color:darkgray; */
 }
 .regform h1{
     padding-right: 50px;
@@ -269,12 +282,10 @@ button{
     margin-bottom: 20px;
     margin-left: 35%;
     margin-right: 35%;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    padding-left: 50px;
-    border: solid;
+    padding: 20px;
+    border: solid rgb(116, 116, 233);
     border-radius: 20px;
-    background-color:darkgray;
+    /* background-color:darkgray; */
 }
 /* .frglabel:hover{
     box-sizing: 30px;
@@ -290,7 +301,7 @@ button{
 }
 .frglabel > input{
     height: 20px;
-    width: 80%;   
+    width: 80%;  
 }
 /* .forgetpsw{
     background-color: darkgray;
@@ -343,7 +354,8 @@ button{
 }
 .about1{
     /* background-color:; */
-    border: solid ;
+    border: solid rgb(116, 116, 233);
+    ;
     /* float: left; */
     display: inline-block;
     width: 500px;

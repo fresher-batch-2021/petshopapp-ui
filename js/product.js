@@ -5,8 +5,8 @@ let content = "";
 for (let pet of topdeals) {
   content = content+ `<div class="items">
         <img src="images/${pet.imageurl}" alt="image"></a><br>
-        <p>${pet.name}</p><br>
-        <p>${pet.price}</p><br>
+        <p>${pet.name}</p>
+        <p>${pet.price}</p>
         
       </div>`
     
