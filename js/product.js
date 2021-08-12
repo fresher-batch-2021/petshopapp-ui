@@ -21,7 +21,7 @@ axios.get(url).then(res =>{
     <a href="viewitems.html?id=${product.id}"><img src="images/${product.imageUrl}" alt="image"></a><br>
     <p>${product.productName}</p>
     <p>${product.description}</p>
-    <p>₹${product.price}</p>
+    <p>Price : ₹${product.price}</p>
     
   </div>`;
   document.querySelector("#dogcontainer").innerHTML = content;
