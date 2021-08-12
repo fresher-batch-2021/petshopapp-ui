@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="pet.css">
+    <title>Document</title>
+</head>
+<body>
+    <header id="header"></header>
+    <div class="order">
+        <h1 style="text-align: center;">Place your Order</h1><br>
+    <form action="">
+        <div class="orderform">
+            <div class="ordercontainer">
+        <label for="username">User Name</label>
+        <input type="text" name="username" id="username" required ><br>
+    </div>
+        <div class="ordercontainer">
+        <label for="phonenumber"> Phone Number</label>
+        <input type="text" name="phonenumber" id="phonenumber" required><br>
+        </div>
+        <div class="ordercontainer">
+        <label for="address">Address</label>
+        <input type="text" name="address" id="address" required><br><br>
+        <button onclick="">Order now</button>
+        <button><a href="product.html">cancel</a></button>
+    </div>
+    </div>
+    </form>
+    </div>
+    <script>
+        $("#header").load("header.html");
+    </script>
+</body>
+</html>

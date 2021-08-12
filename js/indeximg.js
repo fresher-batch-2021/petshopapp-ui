@@ -1,12 +1,13 @@
 
-var indeximg=[{imageurl:"dog.jpg",name:"product for dogs"},
-{imageurl:"cat.jpg",name:"product for cats"},{imageurl:"bird.png",name:"product for birds"}];
+var indexImg=[{imageurl:"dog.jpg",name:"product for dogs",category:"dog"},
+{imageurl:"cat.jpg",name:"product for cats",category:"cat"},
+{imageurl:"bird.png",name:"product for birds",category:"bird"}];
 let content="";
-for(let img of indeximg)
+for(let img of indexImg)
 {
     content=content+`
-    <div class="items1" >
-                <a href="product.html"><img src="images/${img.imageurl}" alt="img"></a><br><br>
+    <div class="indeximg" >
+                <a href="product.html?category=${img.category}"><img src="images/${img.imageurl}" alt="img"></a><br><br>
                 <p> ${img.name}</p>
                 
             </div>`;

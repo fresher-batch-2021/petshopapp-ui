@@ -26,6 +26,9 @@ header{
     position: sticky;
     top: 0;
 }
+
+/* header */
+
 .navbar{
    
     background-color:#3da6fc ;
@@ -58,9 +61,8 @@ header{
 .head{
     display: inline-block;
 }
-.head p{
-    /* text-align: center; */
-}
+
+/* slide */
 
 .mySlides {display: none;}
     img {vertical-align: middle;}
@@ -68,8 +70,7 @@ header{
     /* Slideshow container */
     .slideshow-container {
       /* transition: 0; */
-        max-width: 1200px;
-      
+      max-width: 1200px;
       position: relative;
       left: 70px;
       top: 10px;
@@ -86,8 +87,6 @@ header{
     .imgslide{
         width: 100%;
         margin-top: 10px;
-        
-  
       }
       .mySlides{
         position: absolute;
@@ -110,18 +109,40 @@ header{
         .text {font-size: 11px}
       } 
 
+      /* product */
+      #container{
+        text-align: center;
+        font-size: 20px;
+          /* border: solid black; */
+          
+      }
+      #dogitems{
+        display: inline-block;
+        margin-right: 40px; 
+        margin-left: 0px;
+      }
+      .items img{
+          text-align: center;
+      }
+      .items p{
+          text-align: center;
+          /* padding: 20px; */
+      }
  #category{
      text-align: center;
      font-size: 20px;
  }
-  .items1{
+  .indeximg  img:hover{
+    box-shadow: 5px 3px 10px 2px black;
+  }
+  .indeximg{
     display: inline-block;
     padding-top: 10px;
     padding-bottom: 50px;
     margin-right: 40px;
     margin-left: 20px;
   }
-  .items1 img{
+  .indeximg img{
       width: 250px;
   }
   
@@ -160,14 +181,8 @@ header{
 .homeimage img{
     max-width: 100%;
 }
-/* section{ 
-    margin: auto;
-    padding: auto;
-} */
 
-/* .indeximg{
-    position: relative;
-} */
+/* footer */
 footer{
     background-color: #2196f3;
     text-align: center;
@@ -303,39 +318,38 @@ button{
     height: 20px;
     width: 80%;  
 }
-/* .forgetpsw{
-    background-color: darkgray;
-    margin: 20px 30%;
-    padding: 20px 100px;
-    border: solid;
-    border-radius: 30px;
-      
-}
-.frgform{
-   
-    text-align: center; 
 
+/* order */
+.order:hover{
+    box-shadow: 5px 3px 10px 2px black;
 }
-#frg.reset{
-    border-radius: 10%;
+.order{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 35%;
+    margin-right: 35%;
+    padding: 20px;
+    border: solid rgb(116, 116, 233);
+    border-radius: 20px;
 }
-#frg.close{
-    border-radius: 10%;
-} */
-/* contactform */
-/* .contactform{
-    font-size: 100%;
-    text-align: center;
+.orderform{
+    padding-left: 65px; 
 }
-.condetials{
-    text-align: center;
-} */
+.ordercontainer{
+    margin: 5px 20px 10px 20px;
+    padding: 5px;
+}
+.ordercontainer > input{
+
+    height: 20px;
+    width: 80%;
+}
 /* cart */
 .cart{
     text-align: center;
 }
 
-/* cart */
+
 
 
 /* contect */
@@ -353,10 +367,8 @@ button{
     /* position: relative; */
 }
 .about1{
-    /* background-color:; */
+    margin: 30px;
     border: solid rgb(116, 116, 233);
-    ;
-    /* float: left; */
     display: inline-block;
     width: 500px;
     padding: 20px 40px;

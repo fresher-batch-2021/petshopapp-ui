@@ -1,16 +1,53 @@
-function product(){
-    var topdeals = [{ imageurl: "item1.jpg", name: "Pedigree Meat", price: "₹1,405.00" }, { imageurl: "item2.jpg", name: "pedigree meat", price: "₹790.00" }, { imageurl: "item3.jpeg", name: "Pedigree Mother &amp; Baby Dog", price: "₹830.00" }, { imageurl: "item4.jpg", name: "Pedigree Meat Jerky Adult Dog Treat", price: "₹1,405.00" }, {imageurl: "item5.jpg",name:"Pedigree Dentastix Dog Treat Oral Care",price:"₹790.00"},{imageurl:"item6.jpg",name:"Royal Canin Maxi Puppy Dog Food",price:"₹5,870"}];
-let content = "";
-// var count=0;
-for (let pet of topdeals) {
-  content = content+ `<div class="items">
-        <img src="images/${pet.imageurl}" alt="image"></a><br>
-        <p>${pet.name}</p>
-        <p>${pet.price}</p>
-        
-      </div>`
+ 
+ function gettingData(){
+  //  alert("hello");
+//getting category from url
+const param=new URLSearchParams(window.location.search.substr(1));
+var category =(param.get("category"));
+var content=`<hr><h1 style=" margin-top: 20px;">Product for ${category}</h1><hr>`;
+// alert(category);
+
+
+//getting data from api
+const url=`https://product-mock-api.herokuapp.com/petshopapp/api/v1/products`;
+console.log(url);
+// alert(url);
+axios.get(url).then(res =>{
+  let petProducts =res.data;
+  for(let product of petProducts){
+  if(product.category==category){
+    console.log(product);
+    content = content+ `<div class="dogitems" id="dogitems">
+    <a href="viewitems.html?id=${product.id}"><img src="images/${product.imageUrl}" alt="image"></a><br>
+    <p>${product.productName}</p>
+    <p>${product.description}</p>
+    <p>₹${product.price}</p>
     
-document.querySelector("#productcontainer").innerHTML = content;
-}
-}
-product();
+  </div>`;
+  document.querySelector("#dogcontainer").innerHTML = content;
+  }
+
+  }
+  // alert("data got successfull");
+}).catch(err =>{
+  alert("error");
+});
+ }
+ gettingData();
+
+// product for cat
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
