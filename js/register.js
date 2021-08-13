@@ -14,8 +14,8 @@ function registerForm(){
     }
     else{
         const regdata = {
-            "Name":name,
-            "Email":email,
+            "name":name,
+            "email":email,
             "password":password,
             "confirmpassword":confirmpassword
         };
@@ -23,6 +23,7 @@ function registerForm(){
     console.log(regdata);
     let url="https://product-mock-api.herokuapp.com/petshopapp/api/v1/auth/register"
    axios.post(url,regdata).then(res=>{
+       
        let data = res.data;
        console.log(data);
        alert("register successfully");
