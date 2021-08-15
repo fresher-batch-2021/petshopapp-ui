@@ -24,7 +24,8 @@ axios.get(url).then(res =>{
     <p>Price : ₹${product.price}</p>
     
   </div>`;
-  document.querySelector("#dogcontainer").innerHTML = content;
+  document.querySelector("#dogContainer").innerHTML = content;
+  
   }
 
   }
@@ -35,7 +36,7 @@ axios.get(url).then(res =>{
  }
  gettingData();
 
-// product for cat
+
 
 
 

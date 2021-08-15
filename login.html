@@ -23,13 +23,13 @@
     <div class="formlogin">
         <form onsubmit="loginform()">
 
-            <div class="loginimg"><img src="./images/1818401.png" alt="cat" width="30%" height="40%"></div>
+            <div class="loginimg"><img src="images/1818401.png" alt="cat" width="30%" height="40%"></div>
             <div class="loginform">
                 <h1>Welcome to login</h1>
              <div class="inputcontainer">       
                 <label for="email">Email</label>
                 <br>
-                <input type="email" name="email" id="email" required>  
+                <input type="email" name="email" id="email" required pattern="[a-z0-9._%]+@[a-z]\.[a-z]{2,3}$" title="Example mail id : example@example.com">  
             </div>
             <div class="inputcontainer">
                 <label for="password">Password</label>

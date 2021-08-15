@@ -19,11 +19,9 @@ function registerForm(){
             "password":password,
             "confirmpassword":confirmpassword
         };
-    
     console.log(regdata);
     let url="https://product-mock-api.herokuapp.com/petshopapp/api/v1/auth/register"
    axios.post(url,regdata).then(res=>{
-       
        let data = res.data;
        console.log(data);
        alert("register successfully");
