@@ -20,15 +20,20 @@ function registerForm(){
             "confirmpassword":confirmpassword
         };
     console.log(regdata);
-    let url="https://product-mock-api.herokuapp.com/petshopapp/api/v1/auth/register"
-   axios.post(url,regdata).then(res=>{
+    const dbUsername = "apikey-v2-2809fxu62dw0lybt6awh1vn0jxt1srfscx9z33bhudjy";
+          const dbPassword ="ff4e6d701676a004128c9bdb601b52d2";
+          const basicAuth = 'Basic ' + btoa(dbUsername + ':' + dbPassword);
+
+         
+    let url="https://f6c8119d-795e-4261-b941-ec3cbc9a4a29-bluemix.cloudantnosqldb.appdomain.cloud/petshop_user"
+   axios.post(url,regdata, { headers: {'Authorization': basicAuth }}).then(res=>{
        let data = res.data;
        console.log(data);
        alert("register successfully");
        window.location.href="login.html";
    }).catch(err=>{
        console.error(err);
-       alert("error")
+       alert("unable to register")
    });
    
   
