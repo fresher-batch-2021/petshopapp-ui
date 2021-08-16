@@ -9,19 +9,8 @@ a{
     color: black;
 
 }
-/* button{
-    margin: 0px auto;
-    background: none;
-    color: inherit;
-    border: none;
-    padding: 0;
-    font: inherit;
-    cursor: pointer;
-    outline: inherit;
-} */
-body{
-    /* background-color:#5b75bd; */
-}
+
+
 header{
     position: sticky;
     top: 0;
@@ -32,7 +21,7 @@ header{
 .navbar{
    
     background-color:#3da6fc ;
-    /* background-color: lightgreen; */
+
     height: 80px;
     
 }
@@ -42,7 +31,7 @@ header{
     margin-left: 5px;
 }
 .navbar .navcontent ul{
-    /* float: right; */
+    
     position: absolute;
     top :16px;
     right: 5px  ;
@@ -62,14 +51,14 @@ header{
     display: inline-block;
 }
 
-/* slide */
+
 
 .mySlides {display: none;}
     img {vertical-align: middle;}
     
     /* Slideshow container */
     .slideshow-container {
-      /* transition: 0; */
+      
       max-width: 1200px;
       position: relative;
       left: 70px;
@@ -113,7 +102,7 @@ header{
       #dogcontainer{
         text-align: center;
         font-size: 20px;
-          /* border: solid black; */
+         
           
       }
       #dogitems{
@@ -126,7 +115,7 @@ header{
       }
       .items p{
           text-align: center;
-          /* padding: 20px; */
+          
       }
  #category{
      text-align: center;
@@ -150,15 +139,13 @@ header{
     margin-top: 500px;
 }
 .shopfordog h1{
-    /* border: solid; */
+
     font-size: 40px;
-    /* text-align: center; */
+    
     padding-left: 40px;
     margin-bottom: 20px;
 }
-.shopfordog{
-  
-}
+
 .row{
     
     display: inline-block;
@@ -186,7 +173,7 @@ header{
 footer{
     background-color: #2196f3;
     text-align: center;
-    /* position:fixed; */
+    
     bottom: 100%;
     left: 0;
     width: 100%;
@@ -196,8 +183,7 @@ footer{
     color: black;
     display: inline;
 }
-    /* position: fixed; */
-    /* width: 100%;
+    
 
 /* login */
 .formlogin:hover{
@@ -263,7 +249,7 @@ footer{
     padding-left: 50px;
     border: solid rgb(116, 116, 233);
     border-radius: 20px;
-    /* background-color:darkgray; */
+    
 }
 .regform h1{
     padding-right: 50px;
@@ -302,11 +288,7 @@ button{
     border-radius: 20px;
     /* background-color:darkgray; */
 }
-/* .frglabel:hover{
-    box-sizing: 30px;
-    box-shadow:30px -30px 30px 10px white;
 
-} */
 .forgetpsw h3{
     padding-left: 70px;
     padding-bottom: 20px;
@@ -352,19 +334,12 @@ button{
 
 
 
-/* contect */
-/* .contectform{
-    text-align: center;
-    margin: auto;
-    padding: auto;
-} */
 /* about */
 .about{
-    /* padding: 20px 0;
-    margin: 5px 0; */
+    
     text-align: center;
     
-    /* position: relative; */
+   
 }
 .about1{
     margin: 30px;
