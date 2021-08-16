@@ -1,24 +1,6 @@
 function loginform() {
     event.preventDefault();
    
-    // alert("validation");
-
-       // const username = document.getElementById("username").value;
-       // const email = document.getElementById("email").value;
-
-       // const password = document.getElementById("password").value;
-       //     if(password == "123456789"){
-       //         alert("login successfull");
-               
-               
-       //     }
-       //     else{
-
-       //         alert("password is incorrect");
-       //     }
-           
-           // window.location.href="index.html";
-//    const name = document.querySelector("#username").value;
    const email = document.querySelector("#email").value;
    const password = document.querySelector("#password").value;
 

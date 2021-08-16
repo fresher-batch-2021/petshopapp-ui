@@ -1,9 +1,9 @@
 
-function displayCart(){
+function displayCart() {
   console.log(JSON.parse(localStorage.getItem("cartElements")));
-let cartItem=JSON.parse(localStorage.getItem("cartElements"));
-let count=0;
-let content = `<table>
+  let cartItem = JSON.parse(localStorage.getItem("cartElements"));
+  let count = 0;
+  let content = `<table>
 <caption>cart Table</caption>
 <tr>
     <th class="itemno">Item No</th>
@@ -16,35 +16,34 @@ let content = `<table>
 </tr>`;
   let end = `</table>`;
 
-for(let item of cartItem){
-    content=content+`<tr> <td>${item.Id}</td>
+  for (let item of cartItem) {
+    content = content + `<tr> <td>${item.Id}</td>
     <td>${item.Category}</td>
-    <td>${item.Description  }</td>
+    <td>${item.Description}</td>
     <td>${item.Qty}</td>
     <td>${item.Price}</td>
     <td><button type="submit" onclick="deleteCartData(${count})">delete</button></td>
   </tr> `
-  count++;
-}
-content= content + end;
-document.querySelector("#table").innerHTML=content;
-
-// alert("item added to cart")
-}
-function deleteCartData(index){
-  var arr=JSON.parse(localStorage.getItem("cartElements"));
-  // alert(index);
-  if(arr[index].Qty>1){
-      
-      arr[index].Qty--;
+    count++;
   }
-  else{
-      
-      arr.splice(index,1);
+  content = content + end;
+  document.querySelector("#table").innerHTML = content;
+
+  // alert("item added to cart")
+}
+function deleteCartData(index) {
+  var arr = JSON.parse(localStorage.getItem("cartElements"));
+  // alert(index);
+  if (arr[index].Qty > 1) {
+
+    arr[index].Qty--;
+  }
+  else {
+
+    arr.splice(index, 1);
   }
   console.log(arr[index]);
-  localStorage.setItem("cartElements",JSON.stringify(arr));
+  localStorage.setItem("cartElements", JSON.stringify(arr));
   displayCart();
-  }
+}
 displayCart();
-// <td><button type="submit" onclick="deleteCartData(${count-1})">delete</button></td>// <td><button type="submit" onclick="deleteCartData(${count-1})">delete</button></td>
