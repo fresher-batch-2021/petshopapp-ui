@@ -31,13 +31,19 @@
             
         <div class="orderContainer">
         <label for="address">Address</label>
-        <input type="text" name="address" id="address" required><br><br>
+        <input type="text" name="address" id="address" required><br>
+        </div>
+        <div class="orderContainer">
+            <label for="totalamount">Totalamount</label>
+            <input type="number" name="totalamount" id="totalamount" required><br>
+        <br>
         <button type="submit" >Order now</button>
-        <button><a href="./index.html">cancel</a></button>
+        <button><a href="./index.html">cancel</a></button></div>
     </div>
     </div>
     </form>
     </div>
+    <script src="js/header.js"></script>
     <script src="js/order.js"></script>
     <script>
         $("#header").load("header.html");

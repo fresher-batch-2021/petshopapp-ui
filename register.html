@@ -23,13 +23,12 @@
 
                     <h1>Create Account</h1>
                     <div class="reginput">
-                 <label for="user name">User Name</label><br>
+                 <label for="username">User Name</label><br>
                     <input type="text" name="name" id="name" required pattern="[A-Za-z]{1,32}">
                 </div>
                 <div class="reginput">
                     <label for="email">Email</label><br>
-                    <input type="email" name="email" id="email" required  title="Example mail id : example@example.com
-                    mail"><br>
+                    <input type="email" name="email" id="email" required  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"><br>
                 </div> 
                 <div class="reginput"> <label for="password">Create Password</label><br>
                     <input type="password" name="password" id="password" required ><br>
@@ -45,11 +44,12 @@
             </div>
         </form>
     </div>
-    <footer id="footer"></footer>
+    <!-- <footer id="footer"></footer> -->
       <script src="./js/register.js"></script>
+      <script src="/js/servicelayer.js"></script>
     <script>
             $("#header").load("header.html");
-            $("#footer").load("footer.html");
+            // $("#footer").load("footer.html");
             
         </script>
 </body>

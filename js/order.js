@@ -1,3 +1,4 @@
+loginCheck();
 function orderNow() {
     alert("alert");
     const name = document.querySelector("#userName").value;
@@ -15,11 +16,13 @@ function orderNow() {
             date: date,
             address: address
         };
+        const dbUsername = "apikey-v2-2809fxu62dw0lybt6awh1vn0jxt1srfscx9z33bhudjy";
+          const dbPassword ="ff4e6d701676a004128c9bdb601b52d2";
+          const basicAuth = 'Basic ' + btoa(dbUsername + ':' + dbPassword);
 
-
-        const url = "https://product-mock-api.herokuapp.com/orderapp/api/v1/orders?applicationName=giftshop";
+        const url = "https://f6c8119d-795e-4261-b941-ec3cbc9a4a29-bluemix.cloudantnosqldb.appdomain.cloud/petshop_order";
         alert("helo");
-        axios.post(url, orderNow).then(res => {
+        axios.post(url, orderNow, { headers: {'Authorization': basicAuth }}).then(res => {
             alert("your order successfully placed");
             window.location.href = "index.html";
         }).catch(err => {

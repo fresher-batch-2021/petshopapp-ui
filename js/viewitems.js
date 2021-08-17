@@ -65,7 +65,7 @@ function addToCart(id, name, img_url, price, description, category) {
     else {
 
         let cartObj = { Id: id, Name: name, Price: price, Image_url: img_url, Description: description, Category: category, Qty: qty };
-        alert(qty, category);
+        // alert(qty, category);
         console.log(cartObj);
         cartItems.push(cartObj);
     }
