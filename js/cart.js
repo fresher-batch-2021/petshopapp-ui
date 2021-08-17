@@ -25,7 +25,7 @@ function displayCart() {
     <td>${item.Qty}</td>
     <td>${item.Price}</td>
     <td><button type="submit" onclick="deleteCartData(${count})">delete</button></td>
-    <td><button type
+    
   </tr> `
     count++;
   }

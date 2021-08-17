@@ -1,8 +1,9 @@
 let login=JSON.parse(localStorage.getItem("logIn"));
+if(login==null||login==undefined){login=false;}
 function logIn(){
     let content="";
     
-    if(login==null||login==undefined){login=false;}
+    
     
     if(login){
         content=`
@@ -26,7 +27,7 @@ function logout(){
 
 
 function loginCheck(){
-
+alert("yeswanth"+JSON.parse(localStorage.getItem("logIn")));
 if(JSON.parse(localStorage.getItem("logIn"))==false){
 alert("Need to login first");
 window.location.href="login.html";

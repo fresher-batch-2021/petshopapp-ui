@@ -1,3 +1,4 @@
+
 function viewItem() {
     const param = new URLSearchParams(window.location.search.substr(1));
     var id = param.get("id");
@@ -44,7 +45,7 @@ function viewItem() {
 }
 
 function addToCart(id, name, img_url, price, description, category) {
-
+    loginCheck();
     let cartItemsStr = localStorage.getItem("cartElements");
     let cartItems = cartItemsStr != null ? JSON.parse(cartItemsStr) : [];
     var qty = 1;
@@ -73,6 +74,12 @@ function addToCart(id, name, img_url, price, description, category) {
     localStorage.setItem("cartElements", JSON.stringify(cartItems));
     alert("item added to cart");
 }
-
+function loginCheck(){
+    if(JSON.parse(localStorage.getItem("logIn"))==false){
+    alert("Need to login first");
+    window.location.href="login.html";
+    return false;
+    }
+    }
 
 viewItem();
