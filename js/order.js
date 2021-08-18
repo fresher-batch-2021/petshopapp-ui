@@ -1,11 +1,15 @@
 loginCheck();
+let total=localStorage.getItem("TOTAL_BILL-AMOUNT");
+    document.querySelector("#totalAmount").value=total;
 function orderNow() {
 
     const name = document.querySelector("#userName").value;
     const phonenumber = document.querySelector("#phoneNumber").value;
     const date = document.querySelector("#date").value;
-    const address = document.querySelector("#address").nodeValue;
+    const address = document.querySelector("#address").value;
+     
     let product =JSON.parse(localStorage.getItem("cartElements"));
+    
     
     event.preventDefault();
 
@@ -34,3 +38,5 @@ function orderNow() {
     }
 
 }
+const totalBillAmout = localStorage.getItem("TOTAL_BILL_AMOUNT");
+document.querySelector("#totalAmount").value=totalBillAmout;

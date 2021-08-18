@@ -70,7 +70,7 @@ function addToCart(id, name, img_url, price, description, category) {
     }
 
     localStorage.setItem("cartElements", JSON.stringify(cartItems));
-    // alert("item added to cart");
+    alert("item added to cart");
 }
 function loginCheck(){
     if(JSON.parse(localStorage.getItem("logIn"))==false){

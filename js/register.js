@@ -6,13 +6,10 @@ function registerForm(){
     const email=document.querySelector("#email").value;
     const password=document.querySelector("#password").value;
     const confirmPassword=document.querySelector("#confirmpassword").value;
-    if(password.length < 8){
-        alert("password must be 8 character");
-    }
-    else if(password!=confirmPassword){
-        alert("password and confirm password not matched")
-    }
-    else{
+    console.log(name,email,password,confirmPassword);
+    try{
+        RegisterValidator.validate(name,email,password,confirmPassword)
+    
         const regData = {
             "name":name,
             "email":email,
@@ -29,7 +26,8 @@ function registerForm(){
        console.error(err.response.data);
        alert("unable to register")
    });
-   
-  
+    } catch(err){
+        alert(err.message);
+        console.error(err.message);
     }
 }
