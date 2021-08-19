@@ -1,15 +1,20 @@
 
-var indexImg=[{imageurl:"dog.jpg",name:"product for dogs",category:"dog"},
-{imageurl:"cat.jpg",name:"product for cats",category:"cat"},
-{imageurl:"bird.png",name:"product for birds",category:"bird"}];
+productService.getCategories().then(res=>{
+    let data =res.data.rows;
+    let categories=data.map(obj=>obj.doc);
+    console.table("category",categories);
+    
 let content="";
-for(let img of indexImg)
+for(let img of categories)
 {
     content=content+`
     <div class="indeximg" >
-                <a href="product.html?category=${img.category}"><img src="images/${img.imageurl}" alt="img"></a><br><br>
+                <a href="product.html?category=${img.category}">
+                <img src="images/${img.imageurl}" alt="img"></a>
+                <br><br>
                 <p> ${img.name}</p>
                 
             </div>`;
             document.querySelector("#category").innerHTML=content;
 }
+});

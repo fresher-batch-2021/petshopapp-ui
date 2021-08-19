@@ -134,6 +134,9 @@ header{
   .indeximg img{
       width: 250px;
   }
+  .indeximg p{
+      text-align: center;
+  }
   
 .spacing{
     margin-top: 500px;
