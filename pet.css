@@ -45,8 +45,41 @@ header{
     margin-right: 5px;
     padding-left: 5px;
 }
+.searchContainer{
+    /* float: right; */
+    /* margin-top: 5px; */
+background-color: #3da6fc;
+    box-shadow: 3px 3px 10px black;
+    /* border: solid black; */
+    
+    /* margin: 30px; */
+}
+.searchContainer >input{
+   
+    border: solid black;
+}
+.searchContainer button{
+    /* float: right; */
+    padding: 4px;
+    margin: 1px;
+}
+/* 
+.search-bar{
+    padding: 2%;
+    position: absolute;
+    right: 111%;
+    top: 24%;
 
-
+}
+.navcontent button {
+    position: absolute;
+    top: 25%;
+    right: 95%; 
+}
+.search-button{
+    border: none;
+    background-color:white;
+} */
 .head{
     display: inline-block;
 }
@@ -110,10 +143,10 @@ header{
         margin-right: 40px; 
         margin-left: 0px;
       }
-      .items img{
+      .dogitems img{
           text-align: center;
       }
-      .items p{
+      .dogitems p{
           text-align: center;
           
       }
