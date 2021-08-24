@@ -2,7 +2,7 @@ const param = new URLSearchParams(window.location.search.substr(1));
 let category = (param.get("category"));
 
 function gettingData() {
-
+let count=0;
   //getting category from url
   let content = `<hr><h1 style=" margin-top: 20px;">Product for ${category}</h1><hr>`;
   productService.products().then(res => {
@@ -15,10 +15,16 @@ function gettingData() {
     <a href="viewitems.html?id=${product._id}">
     <img src="images/${product.imageUrl}" alt="image"></a><br>
     <p>${product.productName}</p>
-   <p>${product.description}</p>
+  
     <p>Price : ₹${product.price}</p>
     
   </div>`;
+        count =count+1;{
+          if(count==4){
+            content = content+`<br>`;
+            count=0;
+          }
+        }
         document.querySelector("#dogContainer").innerHTML = content;
 
      }

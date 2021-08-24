@@ -28,7 +28,7 @@ function displayCart() {
     <td>${item.Category}</td>
     <td>${item.Description}</td>
     <td>${item.Qty}</td>
-    <td>${item.Price}</td>
+    <td>${item.Price*item.Qty}</td>
     <td><button type="submit" onclick="deleteCartData(${count-1})">delete</button></td>
     
   </tr> `
@@ -68,7 +68,7 @@ function cartCheck(){
     if (cartItem==null||cartItem=="")
      {
       alert("cart is empty");
-      window.location.href="occasionsz.html";
+      
     } else 
     {
       window.location.href="ordernow.html";

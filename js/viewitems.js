@@ -29,7 +29,6 @@ function viewItem() {
         <p>${price}</p>
         <br>
         <p>${description}</p><br>
-        <button onclick="" ><a href="order.html">ordernow</a></button>
         <button onclick="addToCart('${id}','${name}','${img_url}','${price}','${description}','${category}')">add to cart</button>
         `;
         // console.log(content);
@@ -72,12 +71,12 @@ function addToCart(id, name, img_url, price, description, category) {
     localStorage.setItem("cartElements", JSON.stringify(cartItems));
     alert("item added to cart");
 }
-function loginCheck(){
-    if(JSON.parse(localStorage.getItem("logIn"))==false){
-    alert("Need to login first");
-    window.location.href="login.html";
-    return false;
-    }
-    }
+// function loginCheck(){
+//     if(JSON.parse(localStorage.getItem("logIn"))==false){
+//     alert("Need to login first");
+//     window.location.href="login.html";
+//     return false;
+//     }
+//     }
 
 viewItem();

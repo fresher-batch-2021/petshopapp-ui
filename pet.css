@@ -7,35 +7,27 @@
 a{
     text-decoration: none;
     color: black;
-
 }
 
+/* header */
 
 header{
     position: sticky;
     top: 0;
 }
-
-/* header */
-
 .navbar{
-   
     background-color:#3da6fc ;
-
-    height: 80px;
-    
+    height: 80px; 
 }
 .navbar a{
     font-size: 40px;
     color: white;
     margin-left: 5px;
 }
-.navbar .navcontent ul{
-    
+.navbar .navcontent ul{ 
     position: absolute;
     top :16px;
     right: 5px  ;
-    
     list-style: none;
 }
 .navcontent li{
@@ -45,66 +37,40 @@ header{
     margin-right: 5px;
     padding-left: 5px;
 }
-.searchContainer{
-    /* float: right; */
-    /* margin-top: 5px; */
-background-color: #3da6fc;
-    box-shadow: 3px 3px 10px black;
-    /* border: solid black; */
-    
-    /* margin: 30px; */
-}
-.searchContainer >input{
-   
-    border: solid black;
-}
-.searchContainer button{
-    /* float: right; */
-    padding: 4px;
-    margin: 1px;
-}
-/* 
-.search-bar{
-    padding: 2%;
-    position: absolute;
-    right: 111%;
-    top: 24%;
 
+/* search bar */
+.searchContainer{
+    background-color: #3da6fc;
+    box-shadow: 3px 3px 10px black;
 }
-.navcontent button {
-    position: absolute;
-    top: 25%;
-    right: 95%; 
+.searchContainer >form{
+    padding-left: 84.5%;
+    /* border: solid black; */
 }
-.search-button{
-    border: none;
-    background-color:white;
-} */
+#search{
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
 .head{
     display: inline-block;
 }
-
-
-
-.mySlides {display: none;}
-    img {vertical-align: middle;}
-    
     /* Slideshow container */
+
+    
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
     .slideshow-container {
-      
       max-width: 1200px;
       position: relative;
       left: 70px;
       top: 10px;
       right: 0px;
-    
     }
     .slideshow-container img{
-       
         height: 450px;
-      
-      margin-right: 10px;
-      right: 10px;
+        margin-right: 10px;
+        right: 10px;
     }
     .imgslide{
         width: 100%;
@@ -135,20 +101,20 @@ background-color: #3da6fc;
       #dogcontainer{
         text-align: center;
         font-size: 20px;
-         
-          
+           
       }
       #dogitems{
         display: inline-block;
-        margin-right: 40px; 
-        margin-left: 0px;
+        margin-bottom: 20px;
+        /* border: solid black; */
+        margin-right: 0px; 
+        margin-left: 70px;
       }
       .dogitems img{
           text-align: center;
       }
       .dogitems p{
-          text-align: center;
-          
+          text-align: center;  
       }
  #category{
      text-align: center;
@@ -379,10 +345,7 @@ th, td {
 
 /* about */
 .about{
-    
-    text-align: center;
-    
-   
+    text-align: center; 
 }
 .about1{
     margin: 30px;

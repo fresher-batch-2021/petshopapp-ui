@@ -18,6 +18,7 @@ function loginForm() {
                 localStorage.setItem("logIn", true);
                 alert("successfully login");
                 window.location.href = "index.html";
+                let email=JSON.parse(localStorage.setItem("email"));
 
             }
 

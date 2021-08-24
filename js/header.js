@@ -1,10 +1,7 @@
-let login = JSON.parse(localStorage.getItem("logIn"));
-if (login == null || login == undefined) { login = false; }
-function logIn() {
+function loggedIn() {
+    let login = JSON.parse(localStorage.getItem("LOGGED_IN_USER"));
+    if (login == null || login == undefined) { login = false; }
     let content = "";
-
-
-
     if (login) {
         content = `
         <a class="navlinks" onclick="logout()"><span style="font-size: 40px; color: white;"><i class="fa fa-sign-out" aria-hidden="true"></i></span></a>`;
@@ -18,19 +15,19 @@ function logIn() {
     document.querySelector(".navlinks").innerHTML = content;
 }
 function logout() {
-
-    localStorage.setItem("logIn", JSON.stringify(false));
-    localStorage.removeItem("cartElements");
-    localStorage.removeItem("totalAmount");
+    localStorage.clear();
+    // // localStorage.setItem("LOGGED_IN_USER", JSON.stringify(false));
+    // localStorage.removeItem("cartElements");
+    // localStorage.removeItem("totalAmount");
     window.location.href = "index.html";
 }
 
 
 function loginCheck() {
-    if (JSON.parse(localStorage.getItem("logIn")) == false) {
+    if (JSON.parse(localStorage.getItem("LOGGED_IN_USER")) == null) {
         alert("Need to login first");
         window.location.href = "login.html";
         return false;
     }
 }
-logIn();
+loggedIn();
