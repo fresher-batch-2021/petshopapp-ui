@@ -45,7 +45,7 @@ function addToCart(id, name, img_url, price, description, category) {
     loginCheck();
     let cartItemsStr = localStorage.getItem("cartElements");
     let cartItems = cartItemsStr != null ? JSON.parse(cartItemsStr) : [];
-    var qty = 1;
+    var quantity = 1;
 
 
     // If item already exist, update the quantity
@@ -56,13 +56,13 @@ function addToCart(id, name, img_url, price, description, category) {
     if (index != -1) {
         let cartObj = cartItems[index];
         console.log(cartObj);
-        cartObj.Qty++;
+        cartObj.Quantity++;
         cartItems[index] = cartObj;
 
     }
     else {
 
-        let cartObj = { Id: id, Name: name, Price: price, Image_url: img_url, Description: description, Category: category, Qty: qty };
+        let cartObj = { Id: id, Name: name, Price: price, Image_url: img_url, Description: description, Category: category, Quantity: quantity };
         // alert(qty, category);
         console.log(cartObj);
         cartItems.push(cartObj);

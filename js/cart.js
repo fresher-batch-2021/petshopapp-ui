@@ -2,6 +2,7 @@ loginCheck();
 function displayCart() {
   console.log(JSON.parse(localStorage.getItem("cartElements")));
   let cartItem = JSON.parse(localStorage.getItem("cartElements"));
+  // console.log("thygu"+cartItem);
   let count = 1;
   let sum = 0;
   let total =0;
@@ -10,9 +11,11 @@ function displayCart() {
 <tr>
     <th class="itemno">Item No</th>
     <th class="category">category</th>
+    
     <th class="product">Product</th>
-    <th class="qty">Quantity</th>
     <th class="price">Price</th>
+    <th class="qty">Quantity</th>
+    <th class="amount">Amount</th>
      <th class="delete">Delete Items</th>
      
     
@@ -22,13 +25,15 @@ function displayCart() {
   </table>`;
 
   for (let item of cartItem) {
-    total = item.Qty*item.Price;
+    total = item.Quantity*item.Price;
     content = content + `<tr> 
-    <td>${item.Id}</td>
+    <td>${count}</td>
     <td>${item.Category}</td>
-    <td>${item.Description}</td>
-    <td>${item.Qty}</td>
-    <td>${item.Price*item.Qty}</td>
+    
+    <td>${item.Name}</td>
+    <td>${item.Price}</td>
+    <td>${item.Quantity}</td>
+    <td>${item.Price*item.Quantity}</td>
     <td><button type="submit" onclick="deleteCartData(${count-1})">delete</button></td>
     
   </tr> `
@@ -38,7 +43,7 @@ function displayCart() {
   content+=`
   <tr>
   
-  <td colspan="6">total Amount: ${sum}</td>
+  <td colspan="8">Total Amount: ${sum}</td>
   
   </tr>
   `;
@@ -51,9 +56,9 @@ function displayCart() {
 function deleteCartData(index) {
   var arr = JSON.parse(localStorage.getItem("cartElements"));
   // alert(index);
-  if (arr[index].Qty > 1) {
+  if (arr[index].Quantity > 1) {
 
-    arr[index].Qty--;
+    arr[index].Quantity--;
   }
   else {
 
