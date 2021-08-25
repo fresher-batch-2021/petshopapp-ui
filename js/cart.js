@@ -2,7 +2,7 @@ loginCheck();
 function displayCart() {
   console.log(JSON.parse(localStorage.getItem("cartElements")));
   let cartItem = JSON.parse(localStorage.getItem("cartElements"));
-  // console.log("thygu"+cartItem);
+  
   let count = 1;
   let sum = 0;
   let total =0;
