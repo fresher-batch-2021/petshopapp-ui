@@ -8,8 +8,8 @@ function myOrder()
             
             console.table(orders);
             let myOrders=orders.filter(obj=>obj.email==email);
-            let thyagu=JSON.stringify(myOrders)
-            console.log("thyagu"+thyagu)
+            // let thyagu=JSON.stringify(myOrders)
+            // console.log("thyagu"+thyagu)
             let content="";
             for(let order of myOrders)
             {
