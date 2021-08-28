@@ -8,25 +8,22 @@ function myOrder()
             
             console.table(orders);
             let myOrders=orders.filter(obj=>obj.email==email);
-            // let thyagu=JSON.stringify(myOrders)
-            // console.log("thyagu"+thyagu)
+        
             let content="";
             for(let order of myOrders)
             {
                 for(item of order.productDetails){
-                content=content+`
-             <p><img src ="images/${item.Image_url}" alt="img" width="80px"></p>
-               <p>${item.Name}<p>
+                content=content+`<tr>
+             <td><img src ="images/${item.Image_url}" alt="img" width="80px"></td>
+               <td>${item.Name}</td>
                
-               <p>${item.Price}</p>
-               <p>${item.Quantity}</p>
-               <p>${item.Category}</p>
-               <p>${order.totalAmount}</p>
-               <p>${order.status}</p>
-
-                <br>
-                `;
+               <td>${item.Price}</td>
+               <td>${item.Quantity}</td>
+               <td>${item.Category}</td>
+               <td>${order.totalAmount}</td></tr>`;
             }
+            content=content +`<td>${order.status}</td>
+            <td>${order.date}</td><br>`
             }
             console.log(content);
             document.querySelector("#myOrderContainer").innerHTML=content;

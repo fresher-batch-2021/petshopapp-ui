@@ -25,11 +25,15 @@
                     <input type="text" name="userName" id="userName" required pattern="[A-Za-z]{1,32}"><br>
                 </div>
                 <div class="orderContainer">
-                    <label for="phoneNumber"> Phone Number</label>
+                    <label for="email"> Email:</label>
+                    <input type="text" name="email" id="email" required ><br>
+                </div>
+                <div class="orderContainer">
+                    <label for="phoneNumber">Contect Number</label>
                     <input type="number" name="phoneNumber" id="phoneNumber" required pattern="[6-9]{1}[0-9]{9}"><br>
                 </div>
                 <div class="orderContainer">
-                    <label for="date">Date:</label>
+                    <label for="date">Delivery Date:</label>
                     <input type="date" name="date" id="date" required><br>
                 </div>
 
@@ -39,11 +43,15 @@
                 </div>
                 <div class="orderContainer">
                     <label for="totalAmount">Totalamount</label>
-            <input type="number"  id="totalAmount" autocomplete="off" required ><br>
-                    <br>
-                    <button type="submit">Order now</button>
-                    <button><a href="./index.html">cancel</a></button>
+            <input type="number"  id="totalAmount" autocomplete="off" required > </div><br>
+                   <div><label for="payment">Paymeny</label> <select name="paymeny" id="payment">
+                    <option value="payment">Cash on Delivery</option>
+                    </select>
                 </div>
+                    <button type="submit">Order now</button>
+                    <button type="reset">Reset</button>
+                    <button><a href="./index.html">cancel</a></button>
+               
             </div>
     </div>
     </form>

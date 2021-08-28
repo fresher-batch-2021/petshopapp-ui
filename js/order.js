@@ -18,7 +18,9 @@ function orderNow() {
             phonenumber: phonenumber,
             date: date,
             address: address,
+            status:"ORDERED",
             totalAmount:totalAmount,
+            Payment:"Cash On Delivery",
             productDetails: product,
             email:loggedInEmail
         };
