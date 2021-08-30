@@ -25,7 +25,7 @@ var slideIndex = 0;
         function showSlides() {
 
             slideIndex++;
-        //    alert("showSlides"  + slideIndex);
+        
           
             
             let mySlidesDiv = document.querySelectorAll('.mySlides');

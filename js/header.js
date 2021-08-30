@@ -16,9 +16,6 @@ function loggedIn() {
 }
 function logout() {
     localStorage.clear();
-    // // localStorage.setItem("LOGGED_IN_USER", JSON.stringify(false));
-    // localStorage.removeItem("cartElements");
-    // localStorage.removeItem("totalAmount");
     window.location.href = "index.html";
 }
 

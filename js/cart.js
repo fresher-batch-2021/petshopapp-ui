@@ -50,12 +50,9 @@ function displayCart() {
   localStorage.setItem("TOTAL_BILL-AMOUNT",sum);
   content = content + end;
   document.querySelector("#table").innerHTML = content;
-
-  // alert("item added to cart")
 }
 function deleteCartData(index) {
   var arr = JSON.parse(localStorage.getItem("cartElements"));
-  // alert(index);
   if (arr[index].Quantity > 1) {
 
     arr[index].Quantity--;
