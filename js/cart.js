@@ -10,8 +10,8 @@ function displayCart() {
 <thead>
 <tr>
     <th class="itemno">Item No</th>
+    <th class="image">Image</th>
     <th class="category">category</th>
-    
     <th class="product">Product</th>
     <th class="price">Price</th>
     <th class="qty">Quantity</th>
@@ -28,8 +28,8 @@ function displayCart() {
     total = item.Quantity*item.Price;
     content = content + `<tr> 
     <td>${count}</td>
+    <td><img class="" src="images/${item.Image_url}" alt="img"></td>
     <td>${item.Category}</td>
-    
     <td>${item.Name}</td>
     <td>${item.Price}</td>
     <td>${item.Quantity}</td>
@@ -80,3 +80,8 @@ function cartCheck(){
     }
 }
 displayCart();
+
+function emptyCart(){
+  localStorage.removeItem("cartElements");
+  window.location.reload();
+}

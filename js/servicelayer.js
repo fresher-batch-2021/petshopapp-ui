@@ -11,7 +11,7 @@ class userService{
                 email:email,
                 password:password
             },
-            fields:["_id","email","password"],
+            fields:["_id","email","password","role"],
            };
            return axios.post(url,loginData, { headers: {'Authorization': basicAuth }});
         }

@@ -21,6 +21,11 @@ class orderService{
 
         return axios.post(url, orderNow, { headers: { 'Authorization': basicAuth } });
     }
+    static cancelOrder(id,orderObj) {
+        const url = `https://f6c8119d-795e-4261-b941-ec3cbc9a4a29-bluemix.cloudantnosqldb.appdomain.cloud/petshop_order/${id}`;
+
+        return axios.put(url, orderObj, { headers: { 'Authorization': basicAuth } });
+    }
 }
 
   

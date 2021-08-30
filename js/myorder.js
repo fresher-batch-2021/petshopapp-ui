@@ -1,32 +1,66 @@
-function myOrder()
-{ 
-    let email=JSON.parse(localStorage.getItem("LOGGED_IN_USER"))?.email;
+function myOrder() {
+    let email = JSON.parse(localStorage.getItem("LOGGED_IN_USER"))?.email;
     console.log(email);
-    orderService.getAllOrders().then(res=>
-        {
-            let orders=res.data.rows.map(obj=>obj.doc);
-            
-            console.table(orders);
-            let myOrders=orders.filter(obj=>obj.email==email);
-        
-            let content="";
-            for(let order of myOrders)
-            {
-                for(item of order.productDetails){
-                content=content+`<tr>
+    orderService.getAllOrders().then(res => {
+        let orders = res.data.rows.map(obj => obj.doc);
+
+        console.table(orders);
+        let myOrders = orders.filter(obj => obj.email == email);
+
+
+        let content = `<table>
+<thead>
+<tr>
+    
+    <th class="image">Image</th>
+    <th class="product">Product Name</th>
+    <th class="price">Price</th>
+    <th class="qty">Quantity</th>
+    <th class="category">category</th>
+    <th class="amount">Amount</th>
+    <th class="date">Order date</th>
+    <th class="status">Status</th>
+    <th class="delete">Delete Items</th>
+     
+    
+</tr></thead><tbody>`;
+        let end = `
+  </tbody>
+  </table>`;
+        for (let order of myOrders) {
+            for (item of order.productDetails) {
+                content = content + `<tr>
              <td><img src ="images/${item.Image_url}" alt="img" width="80px"></td>
                <td>${item.Name}</td>
                
                <td>${item.Price}</td>
                <td>${item.Quantity}</td>
                <td>${item.Category}</td>
-               <td>${order.totalAmount}</td></tr>`;
+               <td>${order.totalAmount}</td>               
+               <td>${order.date}</td>
+               <td>${order.status}</td>
+               <td><button onClick="cancelOrder('${order._id}')">Cancel order</button></td></tr>`;
             }
-            content=content +`<td>${order.status}</td>
-            <td>${order.date}</td><br>`
-            }
-            console.log(content);
-            document.querySelector("#myOrderContainer").innerHTML=content;
-        });
+        }
+        console.log(content);
+        content = content + end;
+        document.querySelector("#myOrderContainer").innerHTML = content;
+    });
 }
 myOrder();
+
+
+function cancelOrder(id) {
+    alert("order is cancelled");
+    orderService.getOrder(id).then(res => {
+        let orderObj = res.data;
+        orderObj.status = "cancelled";
+        orderService.cancelOrder(id, orderObj).then(res1 => {
+            alert("successfully deleted");
+            window.location.reload();
+        }).catch(err => {
+            alert("error");
+            console.log(err.response.message);
+        })
+    })
+}

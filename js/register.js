@@ -14,7 +14,8 @@ function registerForm(){
             "name":name,
             "email":email,
             "password":password,
-            "confirmPassword":confirmPassword
+            "confirmPassword":confirmPassword,
+            "role":"USER"
         };
     console.log(regData);
      userService.register(regData).then(res=>{
