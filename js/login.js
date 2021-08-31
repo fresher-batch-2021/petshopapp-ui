@@ -11,12 +11,15 @@ function loginForm() {
             let data = res.data.docs;
             console.log(data);
             if (data.length == 0) {
-                alert("invalid login credential");
+                toastr.error("Invalid login credentials");
             } else {
                 const user = data[0];
                 localStorage.setItem("LOGGED_IN_USER", JSON.stringify(user));
                 localStorage.setItem("logIn", true);
-                alert("successfully login");
+                toastr.success("successfully log in");
+                setTimeout(function () {
+                    window.location.href = "index.html"
+                }, 9000);
                 window.location.href = "index.html";
                 let email=JSON.parse(localStorage.setItem("email"));
 
@@ -25,7 +28,7 @@ function loginForm() {
         }).catch(err => {
 
             console.error(err.response.data);
-            alert("unable to login");
+            toastr.error("unable to login")
         });
         
 
