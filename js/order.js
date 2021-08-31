@@ -1,4 +1,4 @@
-loginCheck();
+// loginCheck();
 let total = localStorage.getItem("TOTAL_BILL-AMOUNT");
 document.querySelector("#totalAmount").value = total;
 function orderNow() {

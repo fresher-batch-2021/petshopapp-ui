@@ -4,7 +4,7 @@ const routes = [
     { path: "index.html" },
     { path: "product.html", roles:["USER"] },
     { path: "cart.html", roles: ["USER", "ADMIN"] },
-    { path: "ordernow.html", roles: ["USER", "ADMIN"] },
+    { path: "order.html", roles: ["USER", "ADMIN"] },
     { path: "myorder.html" }
 
 ];
