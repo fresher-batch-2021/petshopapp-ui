@@ -28,6 +28,10 @@ function myOrder() {
   </tbody>
   </table>`;
         for (let order of myOrders) {
+            let orderedDate = new Date(order.date).toJSON(); //.substr(0, 10);
+            let date = moment(new Date(orderedDate)).format("DD-MM-YYYY");
+            
+
             for (item of order.productDetails) {
                 content = content + `<tr>
              <td><img src ="images/${item.Image_url}" alt="img" width="80px"></td>
@@ -37,9 +41,9 @@ function myOrder() {
                <td>${item.Quantity}</td>
                <td>${item.Category}</td>
                <td>${order.totalAmount}</td>               
-               <td>${order.date}</td>
+               <td>${date}</td>
                <td>${order.status}</td>
-               <td><button onClick="cancelOrder('${order._id}')">Cancel order</button></td></tr>`;
+               <td><button class="btn btn-danger" onClick="cancelOrder('${order._id}')">Cancel order</button></td></tr>`;
             }
         }
         console.log(content);
@@ -54,7 +58,7 @@ function cancelOrder(id) {
     alert("order is cancelled");
     orderService.getOrder(id).then(res => {
         let orderObj = res.data;
-        orderObj.status = "cancelled";
+        orderObj.status = "CANCELLED";
         orderService.cancelOrder(id, orderObj).then(res1 => {
             alert("successfully deleted");
             window.location.reload();

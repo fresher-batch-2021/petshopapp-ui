@@ -30,7 +30,7 @@ function viewItem() {
 
 
     }).catch(err => {
-        alert("error");
+        toastr.error("error");
     });
 
 }
@@ -40,30 +40,21 @@ function addToCart(id, name, img_url, price, description, category) {
     let cartItemsStr = localStorage.getItem("cartElements");
     let cartItems = cartItemsStr != null ? JSON.parse(cartItemsStr) : [];
     var quantity = 1;
-
-
     // If item already exist, update the quantity
     let index = cartItems.findIndex(cartItems => cartItems.Id == id);
-
     console.log(index);
-
     if (index != -1) {
         let cartObj = cartItems[index];
         console.log(cartObj);
         cartObj.Quantity++;
         cartItems[index] = cartObj;
-
     }
     else {
-
         let cartObj = { Id: id, Name: name, Price: price, Image_url: img_url, Description: description, Category: category, Quantity: quantity };
-        
-        console.log(cartObj);
+        // console.log(cartObj);
         cartItems.push(cartObj);
     }
-
     localStorage.setItem("cartElements", JSON.stringify(cartItems));
-    alert("item added to cart");
+    toastr.success("item added to cart");
 }
-
 viewItem();

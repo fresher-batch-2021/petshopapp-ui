@@ -3,13 +3,15 @@ function loggedIn() {
     if (login == null || login == undefined) { login = false; }
     let content = "";
     if (login) {
-        content = `
-        <a class="navlinks" onclick="logout()"><span style="font-size: 40px; color: white;"><i class="fa fa-sign-out" aria-hidden="true"></i></span></a>`;
+        content = `<div class="tooltip">
+        <a class="navlinks" href="" onclick="logout()"><span style="font-size: 55px; color: white;"><i class="fa fa-sign-out" aria-hidden="true"></i></span></a><div class="tooltiptext"> <p>Logout</p></div>
+        </div>`;
     }
     else {
-        content = `
-        <a class="navlinks" href="login.html"><span style="font-size: 40px; color: white;"><i class="fa fa-sign-in"
-                                aria-hidden="true"></i></span></a>`;
+        content = `  <div class="tooltip">
+        <a class="navlinks" href="login.html"><span style="font-size: 55px; color: white;"><i class="fa fa-sign-in"
+                                aria-hidden="true"></i></span></a><div class="tooltiptext"> <p>Login</p></div>
+                                </div>`;
 
     }
     document.querySelector(".navlinks").innerHTML = content;
@@ -22,8 +24,11 @@ function logout() {
 
 function loginCheck() {
     if (JSON.parse(localStorage.getItem("LOGGED_IN_USER")) == null) {
-        alert("Need to login first");
-        window.location.href = "login.html";
+        toastr.warning("Need to login first")
+        setTimeout(function(){
+            window.location.href = "login.html";
+        },1000)
+       
         return false;
     }
 }

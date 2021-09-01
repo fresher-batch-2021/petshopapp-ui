@@ -16,22 +16,39 @@ function registerForm(){
             "password":password,
             "confirmPassword":confirmPassword,
             "role":"USER"
-        };
+        }
+         emailExists(email).then(res=>{
+            let exists = res;
+            if(exists){
+                toastr.error("","this email id is already exist",
+                {
+                    preventDuplicate:true
+                });
+            }
+        else{
     console.log(regData);
      userService.register(regData).then(res=>{
        let data = res.data;
        console.log(data);
        toastr.success("Register successfully");
        setTimeout(function () {
-        window.location.href = "login.html"
+        window.location.href = "login.html";
     }, 3000);
       
    }).catch(err=>{
        console.error(err.response.data);
        toastr.error("unable to register");
    });
-    } catch(err){
-        alert(err.message);
-        console.error(err.message);
     }
+ }). catch(err=>
+    {
+        toastr.error("err")
+        // alert(err.message);
+        // console.error(err.message);
+    });
 }
+catch(err){
+    console.log(err);
+    toastr.error(err.message);
+}
+         }

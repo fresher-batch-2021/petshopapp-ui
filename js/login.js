@@ -19,21 +19,21 @@ function loginForm() {
                 toastr.success("successfully log in");
                 setTimeout(function () {
                     window.location.href = "index.html"
-                }, 9000);
-                window.location.href = "index.html";
+                }, 1000);
+                
                 let email=JSON.parse(localStorage.setItem("email"));
 
             }
 
         }).catch(err => {
 
-            console.error(err.response.data);
-            toastr.error("unable to login")
+            // console.error(err.response.data);
+            // toastr.error("unable to login")
         });
         
 
     } catch (err) {
-        alert(err.message);
-        console.log(err.message);
+        toastr.error(err.message);
+        // console.log(err.message);
     }
 }

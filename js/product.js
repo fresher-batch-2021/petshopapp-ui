@@ -39,16 +39,16 @@ gettingData();
 
 function searchProducts(){
   event.preventDefault();
-  console.log("Search Products");
+  // console.log("Search Products");
   //1. Get search text box value
   let productName = document.querySelector("#search").value;
-  console.log("Search:", productName);
+  // console.log("Search:", productName);
 
   //2. GEt all products
   productService.products().then(res=>{
     const data=res.data.rows;
     const productData=data.map(obj=>obj.doc);
-    console.log(productData);
+    // console.log(productData);
 
     //3. Filter products based on the given search key word
     let filteredProducts = productData;
@@ -59,7 +59,7 @@ function searchProducts(){
     let content="";
     for(let product of filteredProducts){
       
-        console.log(product);
+        // console.log(product);
         content = content + `<div class="dogitems" id="dogitems">
     <a href="viewitems.html?id=${product.productName}">
     <img src="images/${product.imageUrl}" alt="image"></a><br>

@@ -26,15 +26,18 @@ function orderNow() {
         };
         console.log(orderNow)
         productService.order(orderNow).then(res => {
-            alert("your order successfully placed");
+            toastr.success("your order placed successfully");
+            setTimeout(function(){
+                window.location.reload();
+            },1000)
+          
             
-            window.location.href = "index.html";
+            
         }).catch(err => {
-            alert("order failed");
+            toastr.error("order failed");
         });
     } catch (err) {
-        console.log(err.message);
-        alert(err.message);
+        // console.log(err.message);
     }
     const totalBillAmout = localStorage.getItem("TOTAL_BILL_AMOUNT");
 document.querySelector("#totalAmount").value = totalBillAmout;
