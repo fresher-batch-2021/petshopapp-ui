@@ -3,15 +3,13 @@ function loggedIn() {
     if (login == null || login == undefined) { login = false; }
     let content = "";
     if (login) {
-        content = `<div class="tooltip">
-        <a class="navlinks" href="" onclick="logout()"><span style="font-size: 55px; color: white;"><i class="fa fa-sign-out" aria-hidden="true"></i></span></a><div class="tooltiptext"> <p>Logout</p></div>
-        </div>`;
+        content = `
+        <a class="navlinks" href="" onclick="logout()"><span style="font-size: 40px; color: white;"><i class="fa fa-sign-out" aria-hidden="true"></i></span></a>`;
     }
     else {
-        content = `  <div class="tooltip">
-        <a class="navlinks" href="login.html"><span style="font-size: 55px; color: white;"><i class="fa fa-sign-in"
-                                aria-hidden="true"></i></span></a><div class="tooltiptext"> <p>Login</p></div>
-                                </div>`;
+        content = `  
+        <a class="navlinks" href="login.html"><span style="font-size: 40px; color: white;"><i class="fa fa-sign-in"
+                                aria-hidden="true"></i></span></a>`;
 
     }
     document.querySelector(".navlinks").innerHTML = content;

@@ -5,8 +5,6 @@ function viewItem() {
   
    productService.viewItems(id).then(res => {
         let productData = res.data;
-        
-        console.log(productData);
         let id = productData._id;
         let name = productData.productName;
         let category = productData.category;
@@ -14,8 +12,9 @@ function viewItem() {
         let img_url = productData.imageUrl;
         let description = productData.description;
         let  content =
-            `
-        <img src="images/${img_url}" alt="">
+            `<div class="productImage">
+        <img src="images/${img_url}" alt="img"></div>
+        <div class="productDetails">
         <p>${name}</p>
         <br>
         <p>${category}</p>
@@ -23,8 +22,8 @@ function viewItem() {
         <p>${price}</p>
         <br>
         <p>${description}</p><br>
-        <button onclick="addToCart('${id}','${name}','${img_url}','${price}','${description}','${category}')">add to cart</button>
-        `;
+        <button onclick="addToCart('${id}','${name}','${img_url}','${price}','${description}','${category}')">Add to Cart</button>
+       </div> `;
         
         document.querySelector("#petProduct").innerHTML = content;
 

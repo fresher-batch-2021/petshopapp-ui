@@ -1,6 +1,6 @@
 var slideIndex = 0;
         
-        let slideData =["images/slide1.jpg","images/slide2.jpg","images/slide3.jpg",];
+        let slideData =["images/slide1.png","images/slide2.png","images/slide3.jpg",];
 
         function addSliderImages(){
 

@@ -4,7 +4,7 @@ let category = (param.get("category"));
 function gettingData() {
 let count=0;
   //getting category from url
-  let content = `<hr><h1 style=" margin-top: 20px;">Product for ${category}</h1><hr>`;
+  let content = `<h1 class="producthead" style=" margin-top: 20px;">Products for ${category}</h1>`;
   productService.products().then(res => {
     let data = res.data.rows;
     let petProducts = data.map(obj=>obj.doc);
@@ -15,9 +15,7 @@ let count=0;
     <a href="viewitems.html?id=${product._id}">
     <img src="images/${product.imageUrl}" alt="image"></a><br>
     <p>${product.productName}</p>
-  
     <p>Price : ₹${product.price}</p>
-    
   </div>`;
         count =count+1;{
           if(count==4){
@@ -48,7 +46,6 @@ function searchProducts(){
   productService.products().then(res=>{
     const data=res.data.rows;
     const productData=data.map(obj=>obj.doc);
-    // console.log(productData);
 
     //3. Filter products based on the given search key word
     let filteredProducts = productData;

@@ -33,7 +33,7 @@ function registerForm(){
        toastr.success("Register successfully");
        setTimeout(function () {
         window.location.href = "login.html";
-    }, 3000);
+    }, 1000);
       
    }).catch(err=>{
        console.error(err.response.data);

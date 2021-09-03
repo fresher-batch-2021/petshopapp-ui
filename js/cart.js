@@ -6,7 +6,7 @@ function displayCart() {
   let count = 1;
   let sum = 0;
   let total =0;
-  let content = `<table>
+  let content = `<table class="table-content">
 <thead>
 <tr>
     <th class="itemno">Item No</th>
@@ -28,7 +28,7 @@ function displayCart() {
     total = item.Quantity*item.Price;
     content = content + `<tr> 
     <td>${count}</td>
-    <td><img class="" src="images/${item.Image_url}" alt="img"></td>
+    <td><img class="cartImage" src="images/${item.Image_url}" alt="img"></td>
     <td>${item.Category}</td>
     <td>${item.Name}</td>
     <td>${item.Price}</td>
@@ -54,14 +54,13 @@ function displayCart() {
 function deleteCartData(index) {
   var arr = JSON.parse(localStorage.getItem("cartElements"));
   if (arr[index].Quantity > 1) {
-
     arr[index].Quantity--;
   }
   else {
-
     arr.splice(index, 1);
   }
-  console.log(arr[index]);
+  toastr.success("Item is deleted");
+  // console.log(arr[index]);
   localStorage.setItem("cartElements", JSON.stringify(arr));
   displayCart();
 }

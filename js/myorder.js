@@ -8,7 +8,7 @@ function myOrder() {
         let myOrders = orders.filter(obj => obj.email == email);
 
 
-        let content = `<table>
+        let content = `<table class="table-content">
 <thead>
 <tr>
     
@@ -36,15 +36,25 @@ function myOrder() {
                 content = content + `<tr>
              <td><img src ="images/${item.Image_url}" alt="img" width="80px"></td>
                <td>${item.Name}</td>
-               
                <td>${item.Price}</td>
                <td>${item.Quantity}</td>
                <td>${item.Category}</td>
                <td>${order.totalAmount}</td>               
                <td>${date}</td>
-               <td>${order.status}</td>
-               <td><button class="btn btn-danger" onClick="cancelOrder('${order._id}')">Cancel order</button></td></tr>`;
+               <td>${order.status}</td>`;
+               if(order.status!="DELIVERED"){
+                   if(order.status!="CANCELLED"){
+                    content+=`<td><p><button class="btn btn-danger" onClick="cancelOrder('${order._id}')">Cancel Order</button></td></p></tr>`;
+                   }
+                   else{
+                    content+=`<td></td>`;
+                }
             }
+            else{
+                content+=`<td></td>`;
+            }
+            
+        }
         }
         console.log(content);
         content = content + end;
@@ -55,12 +65,15 @@ myOrder();
 
 
 function cancelOrder(id) {
-    alert("order is cancelled");
+    toastr.success("your order is cancelled");
+    setTimeout(function(){
+        window.location.reload();
+    },5000);
     orderService.getOrder(id).then(res => {
         let orderObj = res.data;
         orderObj.status = "CANCELLED";
         orderService.cancelOrder(id, orderObj).then(res1 => {
-            alert("successfully deleted");
+            // alert("successfully deleted");
             window.location.reload();
         }).catch(err => {
             alert("error");

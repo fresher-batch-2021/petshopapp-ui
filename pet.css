@@ -1,6 +1,5 @@
 
 *{  
-    
     margin: 0px;
     padding: 0px;
 }
@@ -9,6 +8,39 @@ a{
     color: black;
 }
 
+/* tabels */
+
+.table-content {
+    margin: 40px auto;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 75%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.table-content thead tr {
+    background-color: #3DA6FC;
+    color: #ffffff;
+}
+.table-content th,
+.table-content td {
+    padding: 12px 15px;
+    border: #D3D3D3 solid 1px;
+}
+.table-head {
+    font-size: large;
+    font-style: normal;
+    font-weight: bolder;
+    color: blue;
+}
+.cartImage{
+    padding: 5px;
+    height: 80px;
+    width: 80px;
+}
+
+
 /* header */
 
 header{
@@ -16,36 +48,42 @@ header{
     top: 0;
 }
 .navbar{
-    background-color:#3da6fc ;
+    background-color:#158BD5 ;
     height: 80px; 
 }
+
+.navbar .logo{
+    padding-top: 10px;
+}
 .navbar a{
+
     font-size: 40px;
     color: white;
-    margin-left: 5px;
+    /* border: solid black; */
+    margin-left: 10px;
 }
-.navbar .navcontent ul{ 
+ .navbar .navcontent ul{ 
     position: absolute;
-    top :16px;
-    right: 50px  ;
+    top :19px;
+    right: 5px;
+    margin-right: 10px;
     list-style: none;
-}
+} 
 .navcontent li{
-    float: left;
+    float: left; 
     font-size: 20px;
-    margin-left: 25px;
-    margin-right: 0;
+    margin-left: 2px;
+    margin-right: 5px;
     padding-left: 5px;
-    
-}
+} 
 
 /* search bar */
 .searchContainer{
-    background-color: #3da6fc;
+    background-color: #158BD5;
     box-shadow: 3px 3px 10px black;
 }
 .searchContainer >form{
-    padding-left: 84.5%;
+    padding-left: 82.5%;
     /* border: solid black; */
 }
 #search{
@@ -62,20 +100,20 @@ header{
 img {vertical-align: middle;}
 
     .slideshow-container {
-      max-width: 1200px;
+      max-width: 100%;
       position: relative;
-      left: 70px;
-      top: 10px;
+      left: 0px;
+      top: 0px;
       right: 0px;
     }
     .slideshow-container img{
         height: 450px;
-        margin-right: 10px;
+        margin-right: 0px;
         right: 10px;
     }
     .imgslide{
-        width: 100%;
-        margin-top: 10px;
+        max-width: 100%;
+        margin-top: 0px;
       }
       .mySlides{
         position: absolute;
@@ -99,24 +137,49 @@ img {vertical-align: middle;}
       } 
 
       /* product */
-      #dogcontainer{
-        text-align: center;
+      #dogContainer{
+          margin-left: 80px;
+          /* text-align: center; */
+          /* border: solid black; */
         font-size: 20px;
-           
+      }
+      .producthead{
+          text-align: center;
+          padding-bottom: 30px;
       }
       #dogitems{
         display: inline-block;
         margin-bottom: 20px;
-        /* border: solid black; */
         margin-right: 0px; 
         margin-left: 70px;
       }
       .dogitems img{
+          height: 200px;
+          width: 200px;
+          padding: 5px;
           text-align: center;
       }
       .dogitems p{
           text-align: center;  
       }
+/* view products */
+
+.petProduct{
+
+}
+.productImage img{
+    margin-top: 20px;
+    width: 400px;
+    height: 400px;
+float: left;
+}
+.productDetails{
+    margin-left: 20px;
+    margin-top: 100px;
+
+float: left;
+}
+    /* index image */
  #category{
      text-align: center;
      font-size: 20px;
@@ -137,24 +200,18 @@ img {vertical-align: middle;}
   .indeximg p{
       text-align: center;
   }
-  
 .spacing{
-    margin-top: 500px;
+    margin-top: 480px;
 }
 .shopfordog h1{
-
     font-size: 40px;
-    
     padding-left: 40px;
     margin-bottom: 20px;
 }
-
 .row{
-    
     display: inline-block;
 }
 .items{
-    
     margin-right: 50px;
     margin-left: 100px;
     display: inline-block;
@@ -167,14 +224,13 @@ img {vertical-align: middle;}
 .items span{
     text-align: center;
 }
-
 .homeimage img{
     max-width: 100%;
 }
 
 /* footer */
 footer{
-    background-color: #2196f3;
+    background-color: #158BD5;
     text-align: center;
     
     bottom: 100%;
@@ -217,27 +273,6 @@ footer{
     height: 20px;
     width: 80%;
 }
-/* input[type=password], input[type=email] 
-     { 
-
-        margin: 10px 100px 0px 100px;
-        padding: 12px 20px; 
-        display: block; 
-        border: 2px solid #D3D3D3; 
-        border-radius: 5px;
-        width: 400px;
-        box-sizing: border-box; 
-        margin-bottom: 20px;
-        border: 2px solid red;
-    }
- label{
-     position: absolute;
-    
-     font-size: 18px;
-     margin-top: 20px;
-     padding-top:200px ;
-     margin-left: 20px;
- }   
  
 /* register */
 .regform:hover{
@@ -354,5 +389,10 @@ th, td {
     display: inline-block;
     width: 500px;
     padding: 20px 40px;
+    
+}
+.itemsDetails{
+    padding: 16px;
+    background-color:lightcyan ;
     
 }
