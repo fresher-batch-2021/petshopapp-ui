@@ -17,9 +17,9 @@ function viewItem() {
         <div class="productDetails">
         <p>${name}</p>
         <br>
-        <p>${category}</p>
+        <p>For: ${category}</p>
         <br>
-        <p>${price}</p>
+        <p>₹${price}</p>
         <br>
         <p>${description}</p><br>
         <button onclick="addToCart('${id}','${name}','${img_url}','${price}','${description}','${category}')">Add to Cart</button>

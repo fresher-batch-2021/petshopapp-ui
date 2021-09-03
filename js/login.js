@@ -16,7 +16,7 @@ function loginForm() {
                 const user = data[0];
                 localStorage.setItem("LOGGED_IN_USER", JSON.stringify(user));
                 localStorage.setItem("logIn", true);
-                toastr.success("successfully log in");
+                toastr.success("successfully logged in");
                 setTimeout(function () {
                     window.location.href = "index.html"
                 }, 1000);

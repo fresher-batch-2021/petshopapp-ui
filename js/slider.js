@@ -44,7 +44,7 @@ var slideIndex = 0;
             //display one image at at time
             mySlidesDiv[slideIndex - 1].style.display = "block";
 
-            setTimeout(showSlides, 1200); // Change image every 2 seconds  
+            setTimeout(showSlides, 2500); // Change image every 2 seconds  
         }
         addSliderImages();
         showSlides();
