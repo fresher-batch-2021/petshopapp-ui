@@ -28,9 +28,9 @@ function displayCart() {
     <td><img class="cartImage" src="images/${item.Image_url}" alt="img"></td>
     <td>${item.Category}</td>
     <td>${item.Name}</td>
-    <td>${item.Price}</td>
+    <td>₹ ${item.Price}</td>
     <td>${item.Quantity}</td>
-    <td>${item.Price*item.Quantity}</td>
+    <td>₹ ${item.Price*item.Quantity}</td>
     <td><button type="submit" onclick="deleteCartData(${count-1})">delete</button></td>
   </tr> `
   sum=sum+total;

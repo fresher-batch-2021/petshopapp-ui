@@ -36,10 +36,10 @@ function myOrder() {
                 content = content + `<tr>
              <td><img src ="images/${item.Image_url}" alt="img" width="80px"></td>
                <td>${item.Name}</td>
-               <td>${item.Price}</td>
+               <td>₹${item.Price}</td>
                <td>${item.Quantity}</td>
                <td>${item.Category}</td>
-               <td>${order.totalAmount}</td>               
+               <td>₹${order.totalAmount}</td>               
                <td>${date}</td>
                <td>${order.status}</td>`;
                 if (order.status != "DELIVERED") {

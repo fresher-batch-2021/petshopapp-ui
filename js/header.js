@@ -1,5 +1,6 @@
 function loggedIn() {
     let login = JSON.parse(localStorage.getItem("LOGGED_IN_USER"));
+    // document.querySelector("#userName").innerHTML=`welcome ${login.email}`
     if (login == null || login == undefined) { login = false; }
     let content = "";
     if (login) {

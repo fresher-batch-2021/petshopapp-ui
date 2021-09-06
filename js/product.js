@@ -29,6 +29,7 @@ function gettingData() {
       }
 
     }
+
   }).catch(err => {
     alert("error");
   });
