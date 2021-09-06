@@ -30,7 +30,7 @@ function myOrder() {
         for (let order of myOrders) {
             let orderedDate = new Date(order.date).toJSON(); //.substr(0, 10);
             let date = moment(new Date(orderedDate)).format("DD-MM-YYYY");
-            
+
 
             for (item of order.productDetails) {
                 content = content + `<tr>
@@ -42,19 +42,19 @@ function myOrder() {
                <td>${order.totalAmount}</td>               
                <td>${date}</td>
                <td>${order.status}</td>`;
-               if(order.status!="DELIVERED"){
-                   if(order.status!="CANCELLED"){
-                    content+=`<td><p><button class="btn btn-danger" onClick="cancelOrder('${order._id}')">Cancel Order</button></td></p></tr>`;
-                   }
-                   else{
-                    content+=`<td></td>`;
+                if (order.status != "DELIVERED") {
+                    if (order.status != "CANCELLED") {
+                        content += `<td><p><button class="btn btn-danger" onClick="cancelOrder('${order._id}')">Cancel Order</button></td></p></tr>`;
+                    }
+                    else {
+                        content += `<td></td>`;
+                    }
                 }
+                else {
+                    content += `<td></td>`;
+                }
+
             }
-            else{
-                content+=`<td></td>`;
-            }
-            
-        }
         }
         console.log(content);
         content = content + end;
@@ -65,10 +65,10 @@ myOrder();
 
 
 function cancelOrder(id) {
-    toastr.success("your order is cancelled");
-    setTimeout(function(){
+    toastr.success("Your order is cancelled");
+    setTimeout(function () {
         window.location.reload();
-    },5000);
+    }, 5000);
     orderService.getOrder(id).then(res => {
         let orderObj = res.data;
         orderObj.status = "CANCELLED";
@@ -76,7 +76,7 @@ function cancelOrder(id) {
             // alert("successfully deleted");
             window.location.reload();
         }).catch(err => {
-            alert("error");
+            toastr.warning("Unable to log in");
             console.log(err.response.message);
         })
     })

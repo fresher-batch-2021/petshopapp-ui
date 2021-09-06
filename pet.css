@@ -167,8 +167,8 @@ img {vertical-align: middle;}
       }
 /* view products */
 
-.petProduct{
-
+.productImage h1{
+    text-align: center;
 }
 .productImage img{
     margin-top: 20px;

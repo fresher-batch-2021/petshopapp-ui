@@ -66,7 +66,7 @@ function cartCheck(){
   let cartItem=JSON.parse(localStorage.getItem("cartElements"));
     if (cartItem==null||cartItem=="")
      {
-       toastr.success("cart is empty");
+       toastr.warning("your cart is empty");
     } else 
     {
       window.location.href="ordernow.html";
@@ -77,7 +77,7 @@ displayCart();
 // empty cart
 function emptyCart(){
   localStorage.removeItem("cartElements");
-  toastr.success("your cart is empty");
+  toastr.success("Your cart is empty");
   setTimeout(function(){
   window.location.reload();
   },1000)

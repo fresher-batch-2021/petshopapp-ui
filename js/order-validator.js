@@ -1,11 +1,11 @@
 class OrderValidation {
     static validate(name, phonenumber, address, products) {
         if (name == null || name.trim() == "") {
-            throw new Error("Name Cant be Blank");
+            throw new Error("Please enter the name");
 
         }
         else if (phonenumber.length < 10) {
-            throw new Error("please Enter a Valid Number");
+            throw new Error("Please enter a valid number");
 
 
         }
@@ -13,7 +13,7 @@ class OrderValidation {
             throw new Error("Please select any item");
         }
         else if(address == null || address.trim() == ""){
-            throw new Error("please enter address")
+            throw new Error("Please enter address")
         }
     }
 }

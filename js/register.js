@@ -37,7 +37,7 @@ function registerForm(){
       
    }).catch(err=>{
        console.error(err.response.data);
-       toastr.error("unable to register");
+       toastr.error("Unable to register");
    });
     }
  }). catch(err=>

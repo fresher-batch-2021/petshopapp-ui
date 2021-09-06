@@ -13,6 +13,7 @@ function viewItem() {
         let description = productData.description;
         let  content =
             `<div class="productImage">
+            <h1>View Item</h1>
         <img src="images/${img_url}" alt="img"></div>
         <div class="productDetails">
         <p>${name}</p>
@@ -54,9 +55,12 @@ function addToCart(id, name, img_url, price, description, category) {
         cartItems.push(cartObj);
     }
     localStorage.setItem("cartElements", JSON.stringify(cartItems));
-    toastr.success("","item added to cart",{
+    toastr.success("","Item added to cart",{
         preventDuplicates:true
     });
+    setTimeout(function(){
+        window.location.href=`product.html?category=${category}`
+    },1500);
 
 }
 viewItem();

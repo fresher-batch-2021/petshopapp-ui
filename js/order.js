@@ -26,7 +26,7 @@ function orderNow() {
         };
         console.log(orderNow)
         productService.order(orderNow).then(res => {
-            toastr.success("your order placed successfully");
+            toastr.success("Your order placed successfully");
             setTimeout(function(){
                 window.location.reload();
             },1000)
@@ -34,7 +34,7 @@ function orderNow() {
             
             
         }).catch(err => {
-            toastr.error("order failed");
+            toastr.error("Order failed");
         });
     } catch (err) {
         // console.log(err.message);

@@ -16,12 +16,12 @@ function loginForm() {
                 const user = data[0];
                 localStorage.setItem("LOGGED_IN_USER", JSON.stringify(user));
                 localStorage.setItem("logIn", true);
-                toastr.success("successfully logged in");
+                toastr.success("Successfully logged in");
                 setTimeout(function () {
                     window.location.href = "index.html"
                 }, 1000);
-                
-                let email=JSON.parse(localStorage.setItem("email"));
+
+                let email = JSON.parse(localStorage.setItem("email"));
 
             }
 
@@ -30,7 +30,7 @@ function loginForm() {
             // console.error(err.response.data);
             // toastr.error("unable to login")
         });
-        
+
 
     } catch (err) {
         toastr.error(err.message);

@@ -4,10 +4,10 @@ class LoginValidator
     {
         if(email==""|| email == null || email.trim()== "")
         {
-            throw new Error("please enter email");
+            throw new Error("Please enter email");
         }else if(password.length<8)
         {
-            throw new Error("password must be 8 character");
+            throw new Error("Password must be 8 character");
         }
 
     }
