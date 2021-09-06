@@ -16,7 +16,7 @@ function myOrder() {
     <th class="product">Product Name</th>
     <th class="price">Price</th>
     <th class="qty">Quantity</th>
-    <th class="category">category</th>
+    <th class="category">Category</th>
     <th class="amount">Amount</th>
     <th class="date">Order date</th>
     <th class="status">Status</th>

@@ -76,6 +76,9 @@ header{
     margin-right: 5px;
     padding-left: 5px;
 } 
+.contactdetails{
+    text-align: center;
+}
 
 /* search bar */
 .searchContainer{

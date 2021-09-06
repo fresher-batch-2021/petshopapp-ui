@@ -2,7 +2,6 @@ loginCheck();
 function displayCart() {
   console.log(JSON.parse(localStorage.getItem("cartElements")));
   let cartItem = JSON.parse(localStorage.getItem("cartElements"));
-  
   let count = 1;
   let sum = 0;
   let total =0;
@@ -16,9 +15,7 @@ function displayCart() {
     <th class="price">Price</th>
     <th class="qty">Quantity</th>
     <th class="amount">Amount</th>
-     <th class="delete">Delete Items</th>
-     
-    
+     <th class="delete">Delete Items</th>    
 </tr></thead><tbody>`;
   let end = `
   </tbody>
@@ -35,22 +32,20 @@ function displayCart() {
     <td>${item.Quantity}</td>
     <td>${item.Price*item.Quantity}</td>
     <td><button type="submit" onclick="deleteCartData(${count-1})">delete</button></td>
-    
   </tr> `
   sum=sum+total;
     count++;
   }
   content+=`
   <tr>
-  
   <td colspan="8">Total Amount: ${sum}</td>
-  
   </tr>
   `;
   localStorage.setItem("TOTAL_BILL-AMOUNT",sum);
   content = content + end;
   document.querySelector("#table").innerHTML = content;
 }
+// delete cart data
 function deleteCartData(index) {
   var arr = JSON.parse(localStorage.getItem("cartElements"));
   if (arr[index].Quantity > 1) {
@@ -59,11 +54,14 @@ function deleteCartData(index) {
   else {
     arr.splice(index, 1);
   }
-  toastr.success("Item is deleted");
+  toastr.warning("","Item is deleted",{ 
+    preventDuplicates:true
+  });
   // console.log(arr[index]);
   localStorage.setItem("cartElements", JSON.stringify(arr));
   displayCart();
 }
+
 function cartCheck(){
   let cartItem=JSON.parse(localStorage.getItem("cartElements"));
     if (cartItem==null||cartItem=="")
@@ -76,6 +74,7 @@ function cartCheck(){
 }
 displayCart();
 
+// empty cart
 function emptyCart(){
   localStorage.removeItem("cartElements");
   toastr.success("your cart is empty");

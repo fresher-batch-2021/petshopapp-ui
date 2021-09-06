@@ -54,6 +54,9 @@ function addToCart(id, name, img_url, price, description, category) {
         cartItems.push(cartObj);
     }
     localStorage.setItem("cartElements", JSON.stringify(cartItems));
-    toastr.success("item added to cart");
+    toastr.success("","item added to cart",{
+        preventDuplicates:true
+    });
+
 }
 viewItem();

@@ -1,6 +1,7 @@
 const param = new URLSearchParams(window.location.search.substr(1));
 let category = (param.get("category"));
 
+gettingData();
 function gettingData() {
 let count=0;
   //getting category from url
@@ -33,7 +34,6 @@ let count=0;
     alert("error");
   });
 }
-gettingData();
 
 function searchProducts(){
   event.preventDefault();

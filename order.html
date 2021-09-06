@@ -12,14 +12,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-     <!-- toastr -->
-     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <!-- toastr -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
 
-    <title></title>
+    <title>order</title>
 </head>
 
 <body>
@@ -51,15 +51,16 @@
                 </div>
                 <div class="orderContainer">
                     <label for="totalAmount">Totalamount</label>
-            <input type="number"  id="totalAmount" autocomplete="off" required > </div><br>
-                   <div><label for="payment">Paymeny</label> <select name="paymeny" id="payment">
-                    <option value="payment">Cash on Delivery</option>
+                    <input type="number" id="totalAmount" autocomplete="off" required><br>
+                </div>
+                <div><label for="payment">Paymeny</label> <select name="paymeny" id="payment">
+                        <option value="payment">Cash on Delivery</option>
                     </select>
                 </div>
-                    <button type="submit">Order now</button>
-                    <button type="reset">Reset</button>
-                    <button><a href="./index.html">cancel</a></button>
-               
+                <button type="submit">Order now</button>
+                <button type="reset">Reset</button>
+                <button><a href="./index.html">cancel</a></button>
+
             </div>
     </div>
     </form>
@@ -69,7 +70,7 @@
     <script src="js/order.js"></script>
     <script src="js/productservice.js"></script>
     <script src="/js/route.js"></script>
-   
+
     <script>
         $("#header").load("header.html");
         $(function () {
