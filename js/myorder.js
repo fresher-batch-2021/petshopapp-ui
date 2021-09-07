@@ -1,4 +1,5 @@
 function myOrder() {
+    
     let email = JSON.parse(localStorage.getItem("LOGGED_IN_USER"))?.email;
     console.log(email);
     orderService.getAllOrders().then(res => {
@@ -7,11 +8,11 @@ function myOrder() {
         console.table(orders);
         let myOrders = orders.filter(obj => obj.email == email);
 
-
+        let count = 1;
         let content = `<table class="table-content">
 <thead>
 <tr>
-    
+    <th class="sno">S.no</th>
     <th class="image">Image</th>
     <th class="product">Product Name</th>
     <th class="price">Price</th>
@@ -28,17 +29,19 @@ function myOrder() {
   </tbody>
   </table>`;
         for (let order of myOrders) {
+            
             let orderedDate = new Date(order.date).toJSON(); //.substr(0, 10);
             let date = moment(new Date(orderedDate)).format("DD-MM-YYYY");
 
 
             for (item of order.productDetails) {
                 content = content + `<tr>
-             <td><img src ="images/${item.Image_url}" alt="img" width="80px"></td>
-               <td>${item.Name}</td>
-               <td>₹${item.Price}</td>
-               <td>${item.Quantity}</td>
-               <td>${item.Category}</td>
+                <td>${count}</td>
+             <td><img src ="images/${item.image_url}" alt="img" width="80px"></td>
+               <td>${item.name}</td>
+               <td>₹${item.price}</td>
+               <td>${item.quantity}</td>
+               <td>${item.category}</td>
                <td>₹${order.totalAmount}</td>               
                <td>${date}</td>
                <td>${order.status}</td>`;
@@ -53,10 +56,12 @@ function myOrder() {
                 else {
                     content += `<td></td>`;
                 }
+                count++;
 
             }
         }
         console.log(content);
+       
         content = content + end;
         document.querySelector("#myOrderContainer").innerHTML = content;
     });

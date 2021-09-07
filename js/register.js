@@ -20,7 +20,7 @@ function registerForm(){
          emailExists(email).then(res=>{
             let exists = res;
             if(exists){
-                toastr.error("","this email id is already exist",
+                toastr.error("","This email id is already exist",
                 {
                     preventDuplicate:true
                 });

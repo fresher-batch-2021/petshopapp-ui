@@ -8,6 +8,7 @@ function viewItem() {
         let id = productData._id;
         let name = productData.productName;
         let category = productData.category;
+        let quantity = productData.quantity;
         let price = productData.price;
         let img_url = productData.imageUrl;
         let description = productData.description;
@@ -41,19 +42,20 @@ function addToCart(id, name, img_url, price, description, category) {
     let cartItems = cartItemsStr != null ? JSON.parse(cartItemsStr) : [];
     var quantity = 1;
     // If item already exist, update the quantity
-    let index = cartItems.findIndex(cartItems => cartItems.Id == id);
-    console.log(index);
+    let index = cartItems.findIndex(cartItems => cartItems.id == id);
     if (index != -1) {
         let cartObj = cartItems[index];
         console.log(cartObj);
-        cartObj.Quantity++;
+        cartObj.quantity++;
         cartItems[index] = cartObj;
     }
     else {
-        let cartObj = { Id: id, Name: name, Price: price, Image_url: img_url, Description: description, Category: category, Quantity: quantity };
-        // console.log(cartObj);
+        let cartObj = { id: id, name: name, price: price, image_url: img_url, description: description, category: category, quantity: quantity };
+        console.log(cartObj);
         cartItems.push(cartObj);
+       
     }
+
     localStorage.setItem("cartElements", JSON.stringify(cartItems));
     toastr.success("","Item added to cart",{
         preventDuplicates:true

@@ -349,23 +349,22 @@ button{
 .order{
     margin-top: 20px;
     margin-bottom: 20px;
-    margin-left: 35%;
-    margin-right: 35%;
+    margin-left: 33%;
+    margin-right: 33%;
     padding: 20px;
     border: solid rgb(116, 116, 233);
     border-radius: 20px;
 }
 .orderform{
-    padding-left: 65px; 
+    padding-left: 65px;
+    /* border: solid black; */
 }
-.ordercontainer{
+.orderContainer{
     margin: 5px 20px 10px 20px;
-    padding: 5px;
 }
-.ordercontainer > input{
-
+.orderContainer > input{
     height: 20px;
-    width: 80%;
+    width: 100%;
 }
 /* cart */
 #table{
@@ -396,6 +395,20 @@ th, td {
 }
 .itemsDetails{
     padding: 16px;
-    background-color:lightcyan ;
-    
+    background-color:lightcyan ; 
+}
+/* cart */
+.orderbtn{
+    text-align: center;
+}
+.myOrder{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 90%;
+    background-color: #158BD5;
+    box-shadow: 3px 3px 10px black; 
+}
+.myOrder a{
+    font-size:18px ;
+    color: white;
 }

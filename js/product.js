@@ -36,13 +36,14 @@ function gettingData() {
 }
 
 function searchProducts() {
+
   event.preventDefault();
   // console.log("Search Products");
   //1. Get search text box value
   let productName = document.querySelector("#search").value;
   // console.log("Search:", productName);
 
-  //2. GEt all products
+  //2. Get all products
   productService.products().then(res => {
     const data = res.data.rows;
     const productData = data.map(obj => obj.doc);
@@ -52,22 +53,29 @@ function searchProducts() {
     if (productName != "") {
       filteredProducts = productData.filter(obj => obj.category == category && obj.productName.toLowerCase().indexOf(productName.toLowerCase()) != -1);
     }
-    console.table(filteredProducts);
     let content = "";
-    for (let product of filteredProducts) {
+    if(filteredProducts==""){
+      content=`<h1>No Item Found</h1>`;
+    
+    }
+    else{
 
+    console.table(filteredProducts);
+    
+    for (let product of filteredProducts) {
       // console.log(product);
       content = content + `<div class="dogitems" id="dogitems">
     <a href="viewitems.html?id=${product.productName}">
     <img src="images/${product.imageUrl}" alt="image"></a><br>
     <p>${product.productName}</p>
    <p>${product.description}</p>
-    <p>Price : ₹${product.price}</p>
-    
+    <p>Price : ₹${product.price}</p>  
   </div>`;
-      document.querySelector("#dogContainer").innerHTML = content;
-
+      
     }
+  }
+  document.querySelector("#dogContainer").innerHTML = content;
+
   });
 }
 

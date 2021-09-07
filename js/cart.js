@@ -19,20 +19,21 @@ function displayCart() {
 </tr></thead><tbody>`;
   let end = `
   </tbody>
-  </table>`;
+  </table><div class="orderbtn"><button type="button"><a href="order.html">Ordernow</a></button>
+  <button type="button" onclick="emptyCart()">Empty Cart</button></div>`;
 
   for (let item of cartItem) {
-    total = item.Quantity*item.Price;
+    total = item.quantity*item.price;
     content = content + `<tr> 
     <td>${count}</td>
-    <td><img class="cartImage" src="images/${item.Image_url}" alt="img"></td>
-    <td>${item.Category}</td>
-    <td>${item.Name}</td>
-    <td>₹ ${item.Price}</td>
-    <td>${item.Quantity}</td>
-    <td>₹ ${item.Price*item.Quantity}</td>
+    <td><img class="cartImage" src="images/${item.image_url}" alt="img"></td>
+    <td>${item.category}</td>
+    <td>${item.name}</td>
+    <td>₹ ${item.price}</td>
+    <td>${item.quantity}</td>
+    <td>₹ ${item.price*item.quantity}</td>
     <td><button type="submit" onclick="deleteCartData(${count-1})">delete</button></td>
-  </tr> `
+  </tr>`
   sum=sum+total;
     count++;
   }
@@ -48,8 +49,8 @@ function displayCart() {
 // delete cart data
 function deleteCartData(index) {
   var arr = JSON.parse(localStorage.getItem("cartElements"));
-  if (arr[index].Quantity > 1) {
-    arr[index].Quantity--;
+  if (arr[index].quantity > 1) {
+    arr[index].quantity--;
   }
   else {
     arr.splice(index, 1);
@@ -66,7 +67,7 @@ function cartCheck(){
   let cartItem=JSON.parse(localStorage.getItem("cartElements"));
     if (cartItem==null||cartItem=="")
      {
-       toastr.warning("your cart is empty");
+       toastr.warning("Your cart is empty");
     } else 
     {
       window.location.href="ordernow.html";
@@ -80,6 +81,5 @@ function emptyCart(){
   toastr.success("Your cart is empty");
   setTimeout(function(){
   window.location.reload();
-  },1000)
-
+  },1000);
 }
