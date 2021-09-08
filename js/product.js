@@ -3,6 +3,8 @@ let category = (param.get("category"));
 
 gettingData();
 function gettingData() {
+  $("#message").show();
+  setTimeout(function() {
   let count = 0;
   //getting category from url
   let content = `<h1 class="producthead" style=" margin-top: 20px;">Products for ${category}</h1>`;
@@ -24,7 +26,9 @@ function gettingData() {
             count = 0;
           }
         }
+        $("#message").hide();
         document.querySelector("#dogContainer").innerHTML = content;
+      
 
       }
 
@@ -33,6 +37,7 @@ function gettingData() {
   }).catch(err => {
     alert("error");
   });
+},1000);
 }
 
 function searchProducts() {

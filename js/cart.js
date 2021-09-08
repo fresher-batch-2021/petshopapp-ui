@@ -1,5 +1,7 @@
 loginCheck();
 function displayCart() {
+  $("#message").show();
+  setTimeout(function(){
   console.log(JSON.parse(localStorage.getItem("cartElements")));
   let cartItem = JSON.parse(localStorage.getItem("cartElements"));
   let count = 1;
@@ -21,7 +23,7 @@ function displayCart() {
   </tbody>
   </table><div class="orderbtn"><button type="button"><a href="order.html">Ordernow</a></button>
   <button type="button" onclick="emptyCart()">Empty Cart</button></div>`;
-
+  if(cartItem){
   for (let item of cartItem) {
     total = item.quantity*item.price;
     content = content + `<tr> 
@@ -45,6 +47,12 @@ function displayCart() {
   localStorage.setItem("TOTAL_BILL-AMOUNT",sum);
   content = content + end;
   document.querySelector("#table").innerHTML = content;
+}
+else{
+   console.log("cart is empty",cartItem);
+}
+$("#message").hide();
+},1000)
 }
 // delete cart data
 function deleteCartData(index) {

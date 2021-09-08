@@ -1,5 +1,7 @@
 
 function viewItem() {
+    $("#message").show();
+    setTimeout(function(){
     const param = new URLSearchParams(window.location.search.substr(1));
     var id = param.get("id");
   
@@ -33,6 +35,8 @@ function viewItem() {
     }).catch(err => {
         toastr.error("error");
     });
+    $("#message").hide();
+},1000);
 
 }
 
@@ -63,6 +67,7 @@ function addToCart(id, name, img_url, price, description, category) {
     setTimeout(function(){
         window.location.href=`product.html?category=${category}`
     },1500);
+  
 
 }
 viewItem();

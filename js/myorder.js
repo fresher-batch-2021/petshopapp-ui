@@ -1,11 +1,11 @@
 function myOrder() {
-    
+
     let email = JSON.parse(localStorage.getItem("LOGGED_IN_USER"))?.email;
     console.log(email);
     orderService.getAllOrders().then(res => {
+
         let orders = res.data.rows.map(obj => obj.doc);
 
-        console.table(orders);
         let myOrders = orders.filter(obj => obj.email == email);
 
         let count = 1;
@@ -29,7 +29,7 @@ function myOrder() {
   </tbody>
   </table>`;
         for (let order of myOrders) {
-            
+
             let orderedDate = new Date(order.date).toJSON(); //.substr(0, 10);
             let date = moment(new Date(orderedDate)).format("DD-MM-YYYY");
 
@@ -60,8 +60,8 @@ function myOrder() {
 
             }
         }
-        console.log(content);
-       
+        
+
         content = content + end;
         document.querySelector("#myOrderContainer").innerHTML = content;
     });
@@ -70,19 +70,33 @@ myOrder();
 
 
 function cancelOrder(id) {
-    toastr.success("Your order is cancelled");
-    setTimeout(function () {
-        window.location.reload();
-    }, 5000);
+    let cfm = confirm("Do you want to cancel your order?");
+    if(cfm){
+
     orderService.getOrder(id).then(res => {
         let orderObj = res.data;
         orderObj.status = "CANCELLED";
-        orderService.cancelOrder(id, orderObj).then(res1 => {
-            // alert("successfully deleted");
-            window.location.reload();
+        console.table("helo",orderObj.productDetails)
+        orderService.cancelOrder(id, orderObj).then(res => {
+            console.table("hi",JSON.stringify(res.data))
+            let stockProduct =orderObj.productDetails;
+            for(let productObj of stockProduct){
+            
+                stockService.increaseStock(productObj.id, productObj.quantity).then(res=>{
+                    toastr.success("Your order is cancelled");
+                    setTimeout(function () {
+                        window.location.reload();
+                    }, 1000);
+                }).catch(err=>{
+                    console.log(err);
+                });
+            
+           
+            }
         }).catch(err => {
             toastr.warning("Unable to log in");
-            console.log(err.response.message);
-        })
-    })
+            console.log(err);
+        });
+    });
+}
 }
