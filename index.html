@@ -12,41 +12,43 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
     integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    
+
 </head>
 
 <body>
-  <header id="header"></header>
-  <!-- slideshow -->
-  <div class="slideshow-container">
+  <main>
+    <header id="header"></header>
+    <!-- slideshow -->
+    <div class="slideshow-container">
 
-  </div>
-  <div class="spacing"></div>
+    </div>
+    <div class="spacing"></div>
 
-  <!-- animals category -->
+    <!-- animals category -->
 
-  <h1 style="text-align: center;">Select your Pets</h1>
-  <br>
-  <div id="category"></div>
-  <!-- for dog product -->
-
-  <section class="shopfordog">
-    <div class="row" id="rowcontainer"></div>
+    <h1 style="text-align: center;">Select your Pets</h1>
     <br>
-  </section>
-  <div class="homeimage"><img src="./images/dog-food_1.jpg" alt="img"></div>
-  <br>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="js/slider.js"></script>
-  <script src="/js/env.js"></script>
-  <script src="js/productservice.js"></script>
-  <script src="js/indeximg.js"></script>
-  <footer id="footer"></footer>
-  <script>
-    $("#header").load("header.html");
-    $("#footer").load("footer.html");
-  </script>
-  <div class="spec"></div>
+    <div id="category"></div>
+    <!-- for dog product -->
+
+    <section class="shopfordog">
+      <div class="row" id="rowcontainer"></div>
+      <br>
+    </section>
+    <div class="homeimage"><img src="./images/dog-food_1.jpg" alt="img"></div>
+    <br>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="/js/env.js"></script>
+    <script src="js/serviceclass/productservice.js"></script>
+    <script src="js/petcategories.js"></script>
+    <footer id="footer"></footer>
+    <script>
+      $("#header").load("header.html");
+      $("#footer").load("footer.html");
+    </script>
+    <div class="spec"></div>
+  </main>
 </body>
 
 </html>

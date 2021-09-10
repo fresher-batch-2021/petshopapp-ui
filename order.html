@@ -23,71 +23,78 @@
 </head>
 
 <body>
-    <header id="header"></header>
-    <div class="order">
-        <h1 style="text-align: center;">Place your Order</h1><br>
-        <form onsubmit="orderNow()">
-            <div class="orderform">
-                <div class="orderContainer">
-                    <label for="userName">User Name</label><br>
-                    <input type="text" name="userName" id="userName" required pattern="[A-Za-z]{1,32}"><br>
-                </div>
-                <div class="orderContainer">
-                    <label for="phoneNumber">Phone</label><br>
-                    <input type="number" name="phoneNumber" id="phoneNumber" required pattern='[7-9]{1}[0-9]{9}'>
-                </div>
-                <div class="orderContainer">
+    <main>
+        <header id="header"></header>
+        <section>
+            <div class="order">
+                <h1 style="text-align: center;">Place your Order</h1><br>
+                <form onsubmit="orderNow()">
+
+                    <div class="orderContainer">
+                        <label for="userName">User Name</label><br>
+                        <input type="text" name="userName" id="userName" required pattern="[A-Za-z]{1,32}"
+                            placeholder="Enter your name"><br>
+                    </div>
+                    <div class="orderContainer">
+                        <label for="phoneNumber">Contact Number</label><br>
+                        <input type="number" name="phoneNumber" id="phoneNumber" required pattern='[7-9]{1}[0-9]{9}'
+                            placeholder="Enter your contact number">
+                    </div>
+
                     <label for="date">Delivery Date:</label>
                     <input type="date" name="date" id="date" required>
-                </div>
 
-                <div class="orderContainer">
+
+
                     <label for="address">Address</label><br>
-                    <textarea name="address" id="address" required></textarea>
-                </div>
-                <div class="orderContainer">
+                    <input type="text" name="address" id="address" required placeholder="Enter your address">
+
+
                     <label for="totalAmount">TotalAmount</label><br>
                     <input type="number" id="totalAmount" autocomplete="off" required>
-                </div>
-                <div><label for="payment">Payment</label> <select name="payment" id="payment">
-                    <option value="payment">Cash on Delivery</option>
+
+                    <label for="payment">Payment</label> <select name="payment" id="payment">
+                        <option value="payment">Cash on Delivery</option>
                     </select>
-                </div>
-                <button type="submit">Order now</button>
-                <button type="reset">Reset</button>
-                <button><a href="./index.html">Cancel</a></button>
 
+                    <button type="submit">Order now</button>
+                    <button type="reset">Reset</button>
+                    <p><a href="./index.html">Cancel</a></p>
+
+
+
+                </form>
             </div>
-    </div>
-    </form>
-    </div>
-    <script src="js/header.js"></script>
-    <script src="js/order-validator.js"></script>
-    <script src="js/order.js"></script>
-    <script src="/js/env.js"></script>
-    <script src="js/productservice.js"></script>
-    <script src="/js/stockservice.js"></script>
-    <script src="/js/route.js"></script>
+        </section>
+        <script src="js/header.js"></script>
+        <script src="js/validatorclass/order-validator.js"></script>
+        <script src="js/order.js"></script>
+        <script src="/js/env.js"></script>
+        <script src="js/serviceclass/productservice.js"></script>
+        <script src="/js/serviceclass/stockservice.js"></script>
+        <script src="/js/route.js"></script>
 
-    <script>
-        $("#header").load("header.html");
-        $(function () {
-            var dtToday = new Date();
+        <script>
+            $("#header").load("header.html");
+            $(function () {
+                var dtToday = new Date();
 
-            var month = dtToday.getMonth() + 1;
-            var day = dtToday.getDate();
-            var year = dtToday.getFullYear();
-            if (month < 10)
-                month = '0' + month.toString();
-            if (day < 10)
-                day = '0' + day.toString();
+                var month = dtToday.getMonth() + 1;
+                var day = dtToday.getDate();
+                var year = dtToday.getFullYear();
+                if (month < 10)
+                    month = '0' + month.toString();
+                if (day < 10)
+                    day = '0' + day.toString();
 
-            var minDate = year + '-' + month + '-' + day;
+                var minDate = year + '-' + month + '-' + day;
 
-            $('#date').attr('min', minDate);
-        });
+                $('#date').attr('min', minDate);
+            });
 
-    </script>
+        </script>
+    </main>
+
 </body>
 
 </html>

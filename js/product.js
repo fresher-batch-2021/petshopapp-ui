@@ -1,43 +1,44 @@
-const param = new URLSearchParams(window.location.search.substr(1));
-let category = (param.get("category"));
+
 
 gettingData();
 function gettingData() {
+  const param = new URLSearchParams(window.location.search.substr(1));
+  let category = (param.get("category"));
   $("#message").show();
-  setTimeout(function() {
-  let count = 0;
-  //getting category from url
-  let content = `<h1 class="producthead" style=" margin-top: 20px;">Products for ${category}</h1>`;
-  productService.products().then(res => {
-    let data = res.data.rows;
-    let petProducts = data.map(obj => obj.doc);
-    for (let product of petProducts) {
-      if (product.category == category) {
-        console.log(product);
-        content = content + `<div class="dogitems" id="dogitems">
+  setTimeout(function () {
+    let count = 0;
+    //getting category from url
+    content = `<h1 class="producthead" style=" margin-top: 20px;">Products for ${category}</h1>`;
+
+    productService.products().then(res => {
+      let data = res.data.rows;
+      let petProducts = data.map(obj => obj.doc);
+      for (let product of petProducts) {
+        if (product.category == category) {
+          console.log(product);
+          content = content + `<div class="dogitems" id="dogitems">
     <a href="viewitems.html?id=${product._id}">
     <img src="images/${product.imageUrl}" alt="image"></a><br>
     <p>${product.productName}</p>
     <p>Price : ₹${product.price}</p>
   </div>`;
-        count = count + 1; {
-          if (count == 4) {
-            content = content + `<br>`;
-            count = 0;
+          count = count + 1; {
+            if (count == 4) {
+              content = content + `<br>`;
+              count = 0;
+            }
           }
+          $("#message").hide();
+          document.querySelector("#dogContainer").innerHTML = content;
         }
-        $("#message").hide();
-        document.querySelector("#dogContainer").innerHTML = content;
-      
 
       }
 
-    }
-
-  }).catch(err => {
-    alert("error");
-  });
-},1000);
+    }).catch(err => {
+      console.log(err)
+      // alert("error");
+    });
+  }, 1000);
 }
 
 function searchProducts() {
@@ -59,27 +60,27 @@ function searchProducts() {
       filteredProducts = productData.filter(obj => obj.category == category && obj.productName.toLowerCase().indexOf(productName.toLowerCase()) != -1);
     }
     let content = "";
-    if(filteredProducts==""){
-      content=`<h1>No Item Found</h1>`;
-    
-    }
-    else{
+    if (filteredProducts == "") {
+      content = `<h1>No Item Found</h1>`;
 
-    console.table(filteredProducts);
-    
-    for (let product of filteredProducts) {
-      // console.log(product);
-      content = content + `<div class="dogitems" id="dogitems">
+    }
+    else {
+
+      console.table(filteredProducts);
+
+      for (let product of filteredProducts) {
+        // console.log(product);
+        content = content + `<div class="dogitems" id="dogitems">
     <a href="viewitems.html?id=${product.productName}">
     <img src="images/${product.imageUrl}" alt="image"></a><br>
     <p>${product.productName}</p>
    <p>${product.description}</p>
     <p>Price : ₹${product.price}</p>  
   </div>`;
-      
+
+      }
     }
-  }
-  document.querySelector("#dogContainer").innerHTML = content;
+    document.querySelector("#dogContainer").innerHTML = content;
 
   });
 }

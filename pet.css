@@ -276,29 +276,34 @@ footer{
     box-shadow: 5px 3px 10px 2px black;
 }
 .formlogin{
+    
     margin-top: 20px;
     margin-bottom: 20px;
     margin-left: 35%;
     margin-right: 35%;
-    padding: 20px;
+    padding: 30px;
     border: solid rgb(116, 116, 233);
     border-radius: 20px;
     /* background-color:#f4af1b; */
 }
+.formlogin input[type=password],[type=email]
+{
+        padding: 5px ; 
+        width: 80%;
+        display: block;
+} 
+
 .loginimg{
     text-align: center;
 }
-.loginform{
+.formlogin{
     padding-left: 65px;
 }
-.inputcontainer{
-    margin: 5px 20px 10px 20px;
-    padding: 5px;
-    
+.formlogin h1{
+    padding-left: 60px;
 }
-.inputcontainer > input{
-    height: 20px;
-    width: 80%;
+.formlogin a{
+    padding-right: 150px;
 }
  
 /* register */
@@ -316,6 +321,7 @@ footer{
     border-radius: 20px;
     
 }
+
 .regform h1{
     padding-right: 50px;
     text-align: center;

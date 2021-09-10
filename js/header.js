@@ -1,11 +1,10 @@
 function loggedIn() {
     let login = JSON.parse(localStorage.getItem("LOGGED_IN_USER"));
     console.table(login)
-    if (login.role!=null) {
-        document.getElementById("user").innerHTML = `Welcome ${login.email}`;
-    }
+
+
     let content = "";
-    if (login.role!=null) {
+    if (login!= null) {
         content = `
         <a class="navlinks" href="" onclick="logout()"><span style="font-size: 40px; color: white;"><i class="fa fa-sign-out" aria-hidden="true"></i></span></a>`;
     }
@@ -15,7 +14,9 @@ function loggedIn() {
                                 aria-hidden="true"></i></span></a>`;
 
     }
-     document.querySelector("#navLinks").innerHTML = content;
+    document.querySelector("#navLinks").innerHTML = content;
+    document.getElementById("user").innerHTML = `Welcome ${login.email}`;
+
 }
 function logout() {
     localStorage.clear();

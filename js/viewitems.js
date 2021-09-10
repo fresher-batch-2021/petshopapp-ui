@@ -1,23 +1,23 @@
 
 function viewItem() {
     $("#message").show();
-    setTimeout(function(){
-    const param = new URLSearchParams(window.location.search.substr(1));
-    var id = param.get("id");
-  
-   productService.viewItems(id).then(res => {
-        let productData = res.data;
-        let id = productData._id;
-        let name = productData.productName;
-        let category = productData.category;
-        let quantity = productData.quantity;
-        let price = productData.price;
-        let img_url = productData.imageUrl;
-        let description = productData.description;
-        let  content =
-            `<div class="productImage">
+    setTimeout(function () {
+        const param = new URLSearchParams(window.location.search.substr(1));
+        let id = param.get("id");
+
+        productService.viewItems(id).then(res => {
+            let productData = res.data;
+            let id = productData._id;
+            let name = productData.productName;
+            let category = productData.category;
+            let quantity = productData.quantity;
+            let price = productData.price;
+            let img_Url = productData.imageUrl;
+            let description = productData.description;
+            let content =
+                `<div class="productImage">
             <h1>View Item</h1>
-        <img src="images/${img_url}" alt="img"></div>
+        <img src="images/${img_Url}" alt="img"></div>
         <div class="productDetails">
         <p>${name}</p>
         <br>
@@ -26,25 +26,25 @@ function viewItem() {
         <p>₹${price}</p>
         <br>
         <p>${description}</p><br>
-        <button onclick="addToCart('${id}','${name}','${img_url}','${price}','${description}','${category}')">Add to Cart</button>
+        <button onclick="addToCart('${id}','${name}','${img_Url}','${price}','${description}','${category}')">Add to Cart</button>
        </div> `;
-        
-        document.querySelector("#petProduct").innerHTML = content;
+
+            document.querySelector("#petProduct").innerHTML = content;
 
 
-    }).catch(err => {
-        toastr.error("error");
-    });
-    $("#message").hide();
-},1000);
+        }).catch(err => {
+            toastr.error("Process Failed");
+        });
+        $("#message").hide();
+    }, 1000);
 
 }
 
-function addToCart(id, name, img_url, price, description, category) {
+function addToCart(id, name, img_Url, price, description, category) {
     loginCheck();
     let cartItemsStr = localStorage.getItem("cartElements");
     let cartItems = cartItemsStr != null ? JSON.parse(cartItemsStr) : [];
-    var quantity = 1;
+    const quantity = 1;
     // If item already exist, update the quantity
     let index = cartItems.findIndex(cartItems => cartItems.id == id);
     if (index != -1) {
@@ -54,20 +54,20 @@ function addToCart(id, name, img_url, price, description, category) {
         cartItems[index] = cartObj;
     }
     else {
-        let cartObj = { id: id, name: name, price: price, image_url: img_url, description: description, category: category, quantity: quantity };
+        const cartObj = { id: id, name: name, price: price, image_Url: img_Url, description: description, category: category, quantity: quantity };
         console.log(cartObj);
         cartItems.push(cartObj);
-       
+
     }
 
     localStorage.setItem("cartElements", JSON.stringify(cartItems));
-    toastr.success("","Item added to cart",{
-        preventDuplicates:true
+    toastr.success("", "Item added to cart", {
+        preventDuplicates: true
     });
-    setTimeout(function(){
-        window.location.href=`product.html?category=${category}`
-    },1500);
-  
+    setTimeout(function () {
+        window.location.href = `product.html?category=${category}`
+    }, 1500);
+
 
 }
 viewItem();

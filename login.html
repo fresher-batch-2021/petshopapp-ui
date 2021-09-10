@@ -25,49 +25,38 @@
 </head>
 
 <body>
-    <header id="header">
+    <main>
+        <header id="header"></header>
 
-    </header>
-
-
-    <div class="formlogin">
-        <form onsubmit="loginForm()">
-
-            <div class="loginimg"><img src="images/1818401.png" alt="cat" width="30%" height="40%"></div>
-            <div class="loginform">
-                <h1>Welcome to login</h1>
-                <div class="inputcontainer">
+        <section>
+            <div class="formlogin">
+                <form onsubmit="loginForm()">
+                    <div class="loginimg"><img src="images/1818401.png" alt="cat" width="30%" height="40%"></div>
+                    <h1>Welcome to login</h1>
                     <label for="email">Email</label>
-                    <br>
-                    <input type="email" name="email" id="email" required autofocus
+                    <input type="email" name="email" id="email" required autofocus placeholder="Enter your email"
                         pattern="[a-z0-9._]+@[a-z.]+\.[a-z]{2,3}$">
-                </div>
-                <div class="inputcontainer">
                     <label for="password">Password</label>
+                    <input type="password" name="password" id="password" required autofocus
+                        placeholder="Enter your password"><br>
+                    <button type="submit" class="lgbtn">Login</button><br>
+                    <p>or</p>
+                    <p>
+                        <a href="register.html">Sign up</a>
+                    </p>
                     <br>
-                    <input type="password" name="password" id="password" required><br>
-                </div>
-                <div class="inputcontainer">
-                    <button type="submit" class="lgbtn">login</button>
-                    <button type="button" class="lgbtn">
-                        <a href="register.html">sign up</a>
-                    </button><br>
-
-                </div>
+                </form>
             </div>
 
+        </section>
+        <script>
+            $("#header").load("header.html");
+        </script>
 
-
-        </form>
-    </div>
-
-
-    <script>
-        $("#header").load("header.html");
-    </script>
-    <script src="/js/env.js"></script>
-    <script src="/js/servicelayer.js"></script>
-    <script src="/js/login-validator.js"></script>
+        <script src="/js/serviceclass/servicelayer.js"></script>
+        <script src="/js/env.js"></script>
+        <script src="/js/validatorclass/login-validator.js"></script>
+    </main>
 </body>
 
 

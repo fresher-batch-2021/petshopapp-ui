@@ -2,30 +2,26 @@ const routes = [
     { path: "register.html" },
     { path: "login.html" },
     { path: "index.html" },
-    { path: "product.html", roles:["USER"] },
+    { path: "product.html", roles: ["USER","ADMIN"] },
     { path: "cart.html", roles: ["USER", "ADMIN"] },
     { path: "order.html", roles: ["USER", "ADMIN"] },
-    { path: "myorder.html", roles:["USER"] }
+    { path: "myorder.html", roles: ["USER","ADMIN"] }
 
 ];
 
- function logout() {
-     localstorage.clear();
-     window.Location.href = "login.html";
- }
+function logout() {
+    localstorage.clear();
+    window.Location.href = "login.html";
+}
 function checkAccess(pageName, role) {
     let allowed = false;
-    for (let route of routes) 
-    {
-        if (route.path == pageName)
-         {
-            if (!route.roles) 
-            {
+    for (let route of routes) {
+        if (route.path == pageName) {
+            if (!route.roles) {
                 allowed = true;
                 break;
             }
-            else if (route.roles.includes(role))
-             {
+            else if (route.roles.includes(role)) {
                 allowed = true;
                 break;
             }
@@ -39,7 +35,7 @@ function checkAccess(pageName, role) {
     console.log("LoggedIn User", user);
     let role = user != null ? user.role : null;
     let pathName = window.location.pathname.substr(1);
-    console.log(role,pathName)
+    console.log(role, pathName)
     let allowedAccess = checkAccess(pathName, role);
 
 
@@ -49,4 +45,4 @@ function checkAccess(pageName, role) {
         window.location.href = "login.html";
     }
 })
-();
+    ();

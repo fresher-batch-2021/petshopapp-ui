@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,57 +10,69 @@
     <link rel="icon" href="/images/favicon.ico">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- axios -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- toastr -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 </head>
+
 <body>
-    <header id="header"></header>
-    
-    <div class="register">
-        
-        <form onsubmit="registerForm()">
-                        
-            
-            <div class="regform">
-                <div class="regimg"><img src="./images/1665644.png" alt="user" width="20%" height="20%"></div>
+    <main>
+        <header id="header"></header>
+        <section>
+            <div class="register">
+
+                <form onsubmit="registerForm()">
+
+
+                    <div class="regform"></div>
+                    <div class="regimg"><img src="./images/1665644.png" alt="user" width="20%" height="20%"></div>
 
                     <h1>Create Account</h1>
                     <div class="reginput">
-                 <label for="username">User Name</label><br>
-                    <input type="text" name="name" id="name" required autofocus pattern="[A-Za-z]{1,32}">
-                </div>
-                <div class="reginput">
-                    <label for="email">Email</label><br>
-                    <input type="email" name="email" id="email" required  pattern="[a-z0-9._]+@[a-z.]+\.[a-z]{2,3}$"><br>
-                </div> 
-                <div class="reginput"> <label for="password">Create Password</label><br>
-                    <input type="password" name="password" id="password" required ><br>
-                </div> <div class="reginput">
-                <label for="password">Confirm Password</label><br>
-                
-                 <input type="password" name="confirmpassword" id="confirmpassword" required><br><br>
-                    <button id="register.signin">sign up</button>
-                    <button id="register.cancel">
-                        <a href="login.html">cancel</a>
-                     </button>
+                        <label for="username">User Name</label><br>
+                        <input type="text" name="name" id="name" required autofocus pattern="[A-Za-z]{1,32}"
+                            placeholder="Enter your name">
+                    </div>
+                    <div class="reginput">
+                        <label for="email">Email</label><br>
+                        <input type="email" name="email" id="email" required pattern="[a-z0-9._]+@[a-z.]+\.[a-z]{2,3}$"
+                            placeholder="Enter your email"><br>
+                    </div>
+                    <div class="reginput"> <label for="password">Create Password</label><br>
+                        <input type="password" name="password" id="password" required
+                            placeholder="Enter your password"><br>
+                    </div>
+                    <div class="reginput">
+                        <label for="password">Confirm Password</label><br>
+
+                        <input type="password" name="confirmpassword" id="confirmpassword" required
+                            placeholder="Confirmpassword"><br><br>
+                        <button id="register.signin">Sign up</button>
+
+                        <p> <a href="login.html">Cancel</a></p>
+
                     </div>
             </div>
-        </form>
-    </div>
+            </form>
+            </div>
+        </section>
+        <script src="./js/register.js"></script>
 
-      <script src="./js/register.js"></script>
-      <script src="js/env.js"></script>
-      <script src="/js/servicelayer.js"></script>
-      <script src="/js/emailvalidation.js"></script>
-      <script src="/js/register-validator.js"></script>
-    <script>
+        <script src="/js/serviceclass/servicelayer.js"></script>
+        <script src="js/env.js"></script>
+        <script src="/js/validatorclass/emailvalidation.js"></script>
+        <script src="/js/validatorclass/register-validator.js"></script>
+        <script>
             $("#header").load("header.html");
-            
-            
+
+
         </script>
+    </main>
 </body>
 
 </html>

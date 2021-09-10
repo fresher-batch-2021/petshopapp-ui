@@ -27,13 +27,13 @@ function loginForm() {
 
         }).catch(err => {
 
-            // console.error(err.response.data);
-            // toastr.error("unable to login")
+            console.error(err.response.data);
+            toastr.error("unable to login")
         });
 
 
     } catch (err) {
-        toastr.error(err.message);
-        // console.log(err.message);
+        toastr.error("Process failed");
+        console.log(err.message);
     }
 }

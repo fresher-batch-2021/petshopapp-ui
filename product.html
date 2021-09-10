@@ -19,40 +19,44 @@
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-   <!-- loader -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- loader -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 
 
 </head>
 
 <body>
-    <header id="header"></header>
-    <div class="searchContainer">
-        <form onsubmit="searchProducts()">
-            <input type="text" name="search" id="search" placeholder="Search" required>
-            <button type="submit"><span style="color:black;"><i class="fa fa-search"
-                        aria-hidden="true"></i></span></button>
-        </form>
-    </div>
-    <div id="message" style="display:none;text-align: center">
-        
-    </div>
-    <div class="dogcontainer" id="dogContainer">
-        
-    </div><br>
+    <main>
+        <header id="header"></header>
+        <section>
+            <div class="searchContainer">
+                <form onsubmit="searchProducts()">
+                    <input type="text" name="search" id="search" placeholder="Search" required>
+                    <button type="submit"><span style="color:black;"><i class="fa fa-search"
+                                aria-hidden="true"></i></span></button>
+                </form>
+            </div>
+            <div id="message" style="display:none;text-align: center">
 
-    <script src="js/jquery.min.js"></script>
-    <script src="/js/env.js"></script>
-    <script src="js/product-search-service.js"></script>
-    <script src="js/productservice.js"></script>
-    <script src="js/product.js"></script>
-    <script src="/js/route.js"></script>
+            </div>
+            <div class="dogcontainer" id="dogContainer">
+
+            </div><br>
+        </section>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/product-search-service.js"></script>
+        <script src="/js/env.js"></script>
+        <script src="js/serviceclass/productservice.js"></script>
+        <script src="js/product.js"></script>
+        <script src="/js/route.js"></script>
 
 
-    <script>
-        $("#header").load("header.html");
-    </script>
+        <script>
+            $("#header").load("header.html");
+        </script>
+    </main>
 </body>
 
 </html>

@@ -1,6 +1,6 @@
 function myOrder() {
 
-    let email = JSON.parse(localStorage.getItem("LOGGED_IN_USER"))?.email;
+    const email = JSON.parse(localStorage.getItem("LOGGED_IN_USER"))?.email;
     console.log(email);
     orderService.getAllOrders().then(res => {
 
@@ -16,7 +16,7 @@ function myOrder() {
     <th class="image">Image</th>
     <th class="product">Product Name</th>
     <th class="price">Price</th>
-    <th class="qty">Quantity</th>
+    <th class="quantity">Quantity</th>
     <th class="category">Category</th>
     <th class="amount">Amount</th>
     <th class="date">Order date</th>
@@ -37,7 +37,7 @@ function myOrder() {
             for (item of order.productDetails) {
                 content = content + `<tr>
                 <td>${count}</td>
-             <td><img src ="images/${item.image_url}" alt="img" width="80px"></td>
+             <td><img src ="images/${item.image_Url}" alt="img" width="80px"></td>
                <td>${item.name}</td>
                <td>₹${item.price}</td>
                <td>${item.quantity}</td>
@@ -60,7 +60,7 @@ function myOrder() {
 
             }
         }
-        
+
 
         content = content + end;
         document.querySelector("#myOrderContainer").innerHTML = content;
@@ -71,32 +71,32 @@ myOrder();
 
 function cancelOrder(id) {
     let cfm = confirm("Do you want to cancel your order?");
-    if(cfm){
+    if (cfm) {
 
-    orderService.getOrder(id).then(res => {
-        let orderObj = res.data;
-        orderObj.status = "CANCELLED";
-        console.table("helo",orderObj.productDetails)
-        orderService.cancelOrder(id, orderObj).then(res => {
-            console.table("hi",JSON.stringify(res.data))
-            let stockProduct =orderObj.productDetails;
-            for(let productObj of stockProduct){
-            
-                stockService.increaseStock(productObj.id, productObj.quantity).then(res=>{
-                    toastr.success("Your order is cancelled");
-                    setTimeout(function () {
-                        window.location.reload();
-                    }, 1000);
-                }).catch(err=>{
-                    console.log(err);
-                });
-            
-           
-            }
-        }).catch(err => {
-            toastr.warning("Unable to log in");
-            console.log(err);
+        orderService.getOrder(id).then(res => {
+            let orderObj = res.data;
+            orderObj.status = "CANCELLED";
+            console.table(orderObj.productDetails)
+            orderService.cancelOrder(id, orderObj).then(res => {
+                console.table(JSON.stringify(res.data))
+                let stockProduct = orderObj.productDetails;
+                for (let productObj of stockProduct) {
+
+                    stockService.increaseStock(productObj.id, productObj.quantity).then(res => {
+                        toastr.success("Your order is cancelled");
+                        setTimeout(function () {
+                            window.location.reload();
+                        }, 500);
+                    }).catch(err => {
+                        console.log(err);
+                    });
+
+
+                }
+            }).catch(err => {
+                toastr.warning("Unable to log in");
+                console.log(err);
+            });
         });
-    });
-}
+    }
 }
