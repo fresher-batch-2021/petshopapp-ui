@@ -24,41 +24,26 @@
     <main>
         <header id="header"></header>
         <section>
-            <div class="register">
+            <div class="regform">
+                <div class="regimg"><img src="./images/1665644.png" alt="user" width="20%" height="20%"></div>
 
+                <h1>Create Account</h1>
                 <form onsubmit="registerForm()">
-
-
-                    <div class="regform"></div>
-                    <div class="regimg"><img src="./images/1665644.png" alt="user" width="20%" height="20%"></div>
-
-                    <h1>Create Account</h1>
-                    <div class="reginput">
-                        <label for="username">User Name</label><br>
-                        <input type="text" name="name" id="name" required autofocus pattern="[A-Za-z]{1,32}"
-                            placeholder="Enter your name">
-                    </div>
-                    <div class="reginput">
-                        <label for="email">Email</label><br>
-                        <input type="email" name="email" id="email" required pattern="[a-z0-9._]+@[a-z.]+\.[a-z]{2,3}$"
-                            placeholder="Enter your email"><br>
-                    </div>
-                    <div class="reginput"> <label for="password">Create Password</label><br>
-                        <input type="password" name="password" id="password" required
-                            placeholder="Enter your password"><br>
-                    </div>
-                    <div class="reginput">
-                        <label for="password">Confirm Password</label><br>
-
-                        <input type="password" name="confirmpassword" id="confirmpassword" required
-                            placeholder="Confirmpassword"><br><br>
-                        <button id="register.signin">Sign up</button>
-
-                        <p> <a href="login.html">Cancel</a></p>
-
-                    </div>
-            </div>
-            </form>
+                    <label for="username">User Name</label>
+                    <input type="text" name="name" id="name" required autofocus pattern="[A-Za-z]{1,32}"
+                        placeholder="Enter your name">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" required pattern="[a-z0-9._]+@[a-z.]+\.[a-z]{2,3}$"
+                        placeholder="Enter your email">
+                    <label for="password">Create Password</label>
+                    <input type="password" name="password" id="password" required placeholder="Enter your password">
+                    <label for="password">Confirm Password</label>
+                    <input type="password" name="confirmpassword" id="confirmpassword" required
+                        placeholder="Confirmpassword"><br>
+                    <button type="submit">Sign up</button>
+                    <p>or</p>
+                    <p>Already have a Account?<a href="login.html">Login</a></p>
+                </form>
             </div>
         </section>
         <script src="./js/register.js"></script>
@@ -67,7 +52,8 @@
         <script src="js/env.js"></script>
         <script src="/js/validatorclass/emailvalidation.js"></script>
         <script src="/js/validatorclass/register-validator.js"></script>
-        <script>
+       <script src="/js/constantmessages.js"></script>
+       <script>
             $("#header").load("header.html");
 
 

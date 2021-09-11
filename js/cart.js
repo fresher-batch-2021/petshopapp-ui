@@ -21,8 +21,8 @@ function displayCart() {
 </tr></thead><tbody>`;
     let end = `
   </tbody>
-  </table><div class="orderbtn"><p><a href="order.html">Ordernow</a></p>
-  <button type="button" onclick="emptyCart()">Empty Cart</button></div>`;
+  </table><div class="orderbtn"><p><a href="order.html">Ordernow</a></p></div>
+  <button type="button" onclick="emptyCart()">Empty Cart</button>`;
     if (cartItem) {
       for (let item of cartItem) {
         total = item.quantity * item.price;
@@ -63,10 +63,10 @@ function deleteCartData(index) {
   else {
     arr.splice(index, 1);
   }
-  toastr.warning("", "Item is deleted", {
+  toastr.warning("", ErrorMessage.CART_ITEM_IS_DELETED, {
     preventDuplicates: true
   });
-  // console.log(arr[index]);
+  
   localStorage.setItem("cartElements", JSON.stringify(arr));
   displayCart();
 }
@@ -74,7 +74,7 @@ function deleteCartData(index) {
 function cartCheck() {
   let cartItem = JSON.parse(localStorage.getItem("cartElements"));
   if (cartItem == null || cartItem == "") {
-    toastr.warning("Your cart is empty");
+    toastr.warning(ErrorMessage.CART_EMPTY);
   } else {
     window.location.href = "ordernow.html";
   }
@@ -84,7 +84,7 @@ displayCart();
 // empty cart
 function emptyCart() {
   localStorage.removeItem("cartElements");
-  toastr.success("Your cart is empty");
+  toastr.success(ErrorMessage.CART_EMPTY);
   setTimeout(function () {
     window.location.reload();
   }, 1000);

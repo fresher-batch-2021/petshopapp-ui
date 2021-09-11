@@ -1,9 +1,7 @@
-// loginCheck();
-let total = JSON.parse(localStorage.getItem("TOTAL_BILL-AMOUNT"));
 
+let total = JSON.parse(localStorage.getItem("TOTAL_BILL-AMOUNT"));
 document.querySelector("#totalAmount").value = total;
 function orderNow() {
-
     const name = document.querySelector("#userName").value;
     const phonenumber = document.querySelector("#phoneNumber").value;
     const date = document.querySelector("#date").value;
@@ -38,22 +36,21 @@ function orderNow() {
                     let data = res.data;
                     console.log(data);
                     localStorage.removeItem("cartElements");
-                    toastr.success("Your order placed successfully");
+                    toastr.success(ErrorMessage.ORDER_IS_SUCCESS);
                     setTimeout(function () {
                         window.location.reload();
                     }, 1000)
                 }).catch(err => {
-                    toastr.error("Order failed");
+                    toastr.error(ErrorMessage.ORDER_IS_FAILED);
 
                 });
             }
         })
     } catch (err) {
-        toastr.error("Process failed")
+        toastr.error(ErrorMessage.CATCH_ERROR)
         console.log(err.message);
 
-        //     const totalBillAmout = localStorage.getItem("TOTAL_BILL_AMOUNT");
-        // document.querySelector("#totalAmount").value = totalBillAmout;
+
     }
 }
 

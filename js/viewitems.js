@@ -3,9 +3,9 @@ function viewItem() {
     $("#message").show();
     setTimeout(function () {
         const param = new URLSearchParams(window.location.search.substr(1));
-        let id = param.get("id");
+        let productId = param.get("id");
 
-        productService.viewItems(id).then(res => {
+        productService.viewItems(productId).then(res => {
             let productData = res.data;
             let id = productData._id;
             let name = productData.productName;
@@ -33,7 +33,7 @@ function viewItem() {
 
 
         }).catch(err => {
-            toastr.error("Process Failed");
+            toastr.error(ErrorMessage.CATCH_ERROR);
         });
         $("#message").hide();
     }, 1000);
@@ -61,7 +61,7 @@ function addToCart(id, name, img_Url, price, description, category) {
     }
 
     localStorage.setItem("cartElements", JSON.stringify(cartItems));
-    toastr.success("", "Item added to cart", {
+    toastr.success("", ErrorMessage.PRODUCT_SUCCESS, {
         preventDuplicates: true
     });
     setTimeout(function () {

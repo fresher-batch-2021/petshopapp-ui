@@ -34,7 +34,7 @@ function myOrder() {
             let date = moment(new Date(orderedDate)).format("DD-MM-YYYY");
 
 
-            for (item of order.productDetails) {
+            for (let item of order.productDetails) {
                 content = content + `<tr>
                 <td>${count}</td>
              <td><img src ="images/${item.image_Url}" alt="img" width="80px"></td>
@@ -83,7 +83,7 @@ function cancelOrder(id) {
                 for (let productObj of stockProduct) {
 
                     stockService.increaseStock(productObj.id, productObj.quantity).then(res => {
-                        toastr.success("Your order is cancelled");
+                        toastr.success(ErrorMessage.MYORDER_CANCEL);
                         setTimeout(function () {
                             window.location.reload();
                         }, 500);
@@ -94,7 +94,7 @@ function cancelOrder(id) {
 
                 }
             }).catch(err => {
-                toastr.warning("Unable to log in");
+                toastr.warning(ErrorMessage.INVALID_LOGIN);
                 console.log(err);
             });
         });

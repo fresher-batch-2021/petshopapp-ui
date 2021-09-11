@@ -11,29 +11,28 @@ function loginForm() {
             let data = res.data.docs;
             console.log(data);
             if (data.length == 0) {
-                toastr.error("Invalid login credentials");
+                toastr.error(ErrorMessage.INVALID_CREDENTIALS);
             } else {
                 const user = data[0];
                 localStorage.setItem("LOGGED_IN_USER", JSON.stringify(user));
                 localStorage.setItem("logIn", true);
-                toastr.success("Successfully logged in");
+                toastr.success(ErrorMessage.VALID_LOGIN);
                 setTimeout(function () {
                     window.location.href = "index.html"
                 }, 1000);
 
-                let email = JSON.parse(localStorage.setItem("email"));
 
             }
 
         }).catch(err => {
 
             console.error(err.response.data);
-            toastr.error("unable to login")
+            toastr.error(ErrorMessage.INVALID_LOGIN)
         });
 
 
     } catch (err) {
-        toastr.error("Process failed");
+        toastr.error(err);
         console.log(err.message);
     }
 }

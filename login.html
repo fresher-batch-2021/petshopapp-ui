@@ -18,10 +18,9 @@
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./js/login.js"></script>
+    <script src="/js/constantmessages.js"></script>
 </head>
 
 <body>
@@ -29,20 +28,22 @@
         <header id="header"></header>
 
         <section>
+
             <div class="formlogin">
+                <div class="loginimg"><img src="images/1818401.png" alt="cat" width="30%" height="40%"></div>
+                <h1>Welcome to login</h1>
                 <form onsubmit="loginForm()">
-                    <div class="loginimg"><img src="images/1818401.png" alt="cat" width="30%" height="40%"></div>
-                    <h1>Welcome to login</h1>
-                    <label for="email">Email</label>
+
+                    <label for="email">Email</label><br>
                     <input type="email" name="email" id="email" required autofocus placeholder="Enter your email"
                         pattern="[a-z0-9._]+@[a-z.]+\.[a-z]{2,3}$">
                     <label for="password">Password</label>
                     <input type="password" name="password" id="password" required autofocus
                         placeholder="Enter your password"><br>
-                    <button type="submit" class="lgbtn">Login</button><br>
-                    <p>or</p>
-                    <p>
-                        <a href="register.html">Sign up</a>
+                    <button type="submit" class="lgbtn">Login</button>
+                    or
+                    <p class="lgbtn">New to Petshop?
+                        <a href="register.html">Create Account</a>
                     </p>
                     <br>
                 </form>

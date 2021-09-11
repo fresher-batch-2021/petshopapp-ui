@@ -276,15 +276,13 @@ footer{
     box-shadow: 5px 3px 10px 2px black;
 }
 .formlogin{
-    
     margin-top: 20px;
     margin-bottom: 20px;
     margin-left: 35%;
     margin-right: 35%;
-    padding: 30px;
+    padding: 10px;
     border: solid rgb(116, 116, 233);
     border-radius: 20px;
-    /* background-color:#f4af1b; */
 }
 .formlogin input[type=password],[type=email]
 {
@@ -296,52 +294,56 @@ footer{
 .loginimg{
     text-align: center;
 }
-.formlogin{
-    padding-left: 65px;
-}
+
 .formlogin h1{
-    padding-left: 60px;
+    text-align: center;
+}
+.formlogin form{
+padding-left: 70px;
+}
+.lgbtn{
+    display: block;    
 }
 .formlogin a{
-    padding-right: 150px;
+    color: blue;
 }
  
 /* register */
+
 .regform:hover{
     box-shadow: 5px 3px 10px 2px black;
 }
 .regform{
-    
     margin-top: 20px;
     margin-bottom: 20px;
     margin-left: 35%;
     margin-right: 35%;
-    padding-left: 50px;
+    padding: 10px;
     border: solid rgb(116, 116, 233);
     border-radius: 20px;
     
 }
 
 .regform h1{
-    padding-right: 50px;
     text-align: center;
 }
 .regimg{
-    padding-top: 20px;
-    padding-right: 50px;
     text-align: center;
 }
-.reginput{
-   
-    margin: 5px 20px 10px 20px;
-    padding: 5px;
-}
-.reginput > input{
-
-    height: 20px;
-    width: 80%;
+.regform input[type=text],[type=password],[type=email]
+{
+        padding: 5px ; 
+        width: 80%;
+        display: block;
+} 
+.regform form{
+    padding-left: 70px;
+    }
+.regform a{
+    color: blue;
 }
 button{
+
     padding: 5px;
 }
 
@@ -373,29 +375,33 @@ button{
 }
 
 /* order */
-.order:hover{
+.orderform:hover{
     box-shadow: 5px 3px 10px 2px black;
 }
-.order{
+.orderform{
     margin-top: 20px;
     margin-bottom: 20px;
-    margin-left: 33%;
-    margin-right: 33%;
-    padding: 20px;
+    margin-left: 35%;
+    margin-right: 35%;
+    padding: 10px;
     border: solid rgb(116, 116, 233);
     border-radius: 20px;
 }
-.orderform{
-    padding-left: 65px;
+.orderform form{
+    padding-left: 70px;
     /* border: solid black; */
 }
-.orderContainer{
-    margin: 5px 20px 10px 20px;
+.orderform h1{
+    text-align: center;
 }
-.orderContainer > input{
-    height: 20px;
-    width: 100%;
-}
+.orderform input[type=text],[type=number],[type=date]
+{
+        padding: 5px ; 
+        width: 80%;
+        display: block;
+} 
+
+
 /* cart */
 #table{
     
@@ -407,6 +413,17 @@ th, td {
     border: 1px solid black;
     padding: 15px;
     text-align: center;
+  }
+  .orderbtn{
+      float: left;
+      margin-left: 47%;
+      margin-right: 47%;
+      background-color:rgb(236, 234, 234);
+      padding: 7px;
+      border: 1px solid black;
+  }
+  .ordbtn{
+    text-align: right   ;
   }
 
 

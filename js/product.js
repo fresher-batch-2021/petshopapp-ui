@@ -8,7 +8,7 @@ function gettingData() {
   setTimeout(function () {
     let count = 0;
     //getting category from url
-    content = `<h1 class="producthead" style=" margin-top: 20px;">Products for ${category}</h1>`;
+    let content = `<h1 class="producthead" style=" margin-top: 20px;">Products for ${category}</h1>`;
 
     productService.products().then(res => {
       let data = res.data.rows;
@@ -35,8 +35,7 @@ function gettingData() {
       }
 
     }).catch(err => {
-      console.log(err)
-      // alert("error");
+      console.log(err);
     });
   }, 1000);
 }
@@ -44,10 +43,10 @@ function gettingData() {
 function searchProducts() {
 
   event.preventDefault();
-  // console.log("Search Products");
+
   //1. Get search text box value
   let productName = document.querySelector("#search").value;
-  // console.log("Search:", productName);
+
 
   //2. Get all products
   productService.products().then(res => {
@@ -69,7 +68,7 @@ function searchProducts() {
       console.table(filteredProducts);
 
       for (let product of filteredProducts) {
-        // console.log(product);
+
         content = content + `<div class="dogitems" id="dogitems">
     <a href="viewitems.html?id=${product.productName}">
     <img src="images/${product.imageUrl}" alt="image"></a><br>

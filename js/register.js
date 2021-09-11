@@ -41,13 +41,13 @@ function registerForm() {
                 });
             }
         }).catch(err => {
-            toastr.error("err")
+            toastr.error(ErrorMessage.CATCH_ERROR)
             // alert(err.message);
             // console.error(err.message);
         });
     }
     catch (err) {
         console.log(err);
-        toastr.error("Process failed");
+        toastr.error(err);
     }
 }
