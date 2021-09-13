@@ -382,7 +382,7 @@ button{
     margin-top: 20px;
     margin-bottom: 20px;
     margin-left: 35%;
-    margin-right: 35%;
+    margin-right: 30%;
     padding: 10px;
     border: solid rgb(116, 116, 233);
     border-radius: 20px;
@@ -397,12 +397,23 @@ button{
 .orderform input[type=text],[type=number],[type=date]
 {
         padding: 5px ; 
-        width: 80%;
+        width: 95%;
         display: block;
 } 
-
+.ordercancel{
+    display: inline-block;
+    /* float: left; */
+      margin-left: 40%;
+      margin-right: 41%;
+      background-color:rgb(236, 234, 234);
+      padding: 5px;
+      border: 1px solid black;
+}
 
 /* cart */
+.carthead h1{
+    text-align: center;
+}
 #table{
     
     padding: 50px;
@@ -414,17 +425,10 @@ th, td {
     padding: 15px;
     text-align: center;
   }
-  .orderbtn{
-      float: left;
-      margin-left: 47%;
-      margin-right: 47%;
-      background-color:rgb(236, 234, 234);
-      padding: 7px;
-      border: 1px solid black;
-  }
-  .ordbtn{
-    text-align: right   ;
-  }
+ 
+  
+  
+  
 
 
 
@@ -445,7 +449,7 @@ th, td {
     background-color:lightcyan ; 
 }
 /* cart */
-.orderbtn{
+.cartbuttons{
     text-align: center;
 }
 .myOrder{

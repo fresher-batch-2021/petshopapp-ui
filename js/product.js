@@ -1,6 +1,24 @@
 
 
 gettingData();
+
+// function productTemplate(product){
+
+const productTemplate = (product)=>{
+  let content = `
+    <div class="dogitems" id="dogitems">
+      <a href="viewitems.html?id=${product._id}">
+        <figure>
+          <img src="images/${product.imageUrl}" alt="image">
+        </figure>
+      </a><br>
+      <p>${product.productName}</p>
+      <p>Price : &#8377;${product.price}</p>
+    </div>
+  `;
+  return content;
+};
+
 function gettingData() {
   const param = new URLSearchParams(window.location.search.substr(1));
   let category = (param.get("category"));
@@ -16,19 +34,14 @@ function gettingData() {
       for (let product of petProducts) {
         if (product.category == category) {
           console.log(product);
-          content = content + `<div class="dogitems" id="dogitems">
-    <a href="viewitems.html?id=${product._id}">
-    <img src="images/${product.imageUrl}" alt="image"></a><br>
-    <p>${product.productName}</p>
-    <p>Price : ₹${product.price}</p>
-  </div>`;
+          content = content + productTemplate(product);
           count = count + 1; {
             if (count == 4) {
               content = content + `<br>`;
               count = 0;
             }
           }
-          $("#message").hide();
+         
           document.querySelector("#dogContainer").innerHTML = content;
         }
 
@@ -37,6 +50,7 @@ function gettingData() {
     }).catch(err => {
       console.log(err);
     });
+    $("#message").hide();
   }, 1000);
 }
 

@@ -37,14 +37,14 @@ function myOrder() {
             for (let item of order.productDetails) {
                 content = content + `<tr>
                 <td>${count}</td>
-             <td><img src ="images/${item.image_Url}" alt="img" width="80px"></td>
-               <td>${item.name}</td>
-               <td>₹${item.price}</td>
-               <td>${item.quantity}</td>
-               <td>${item.category}</td>
-               <td>₹${order.totalAmount}</td>               
-               <td>${date}</td>
-               <td>${order.status}</td>`;
+                <td><img src ="images/${item.image_Url}" alt="img" width="80px"></td>
+                <td>${item.name}</td>
+                <td>&#8377;${item.price}</td>
+                <td>${item.quantity}</td>
+                <td>${item.category}</td>
+                <td>&#8377;${order.totalAmount}</td>               
+                <td>${date}</td>
+                <td>${order.status}</td>`;
                 if (order.status != "DELIVERED") {
                     if (order.status != "CANCELLED") {
                         content += `<td><p><button class="btn btn-danger" onClick="cancelOrder('${order._id}')">Cancel Order</button></td></p></tr>`;

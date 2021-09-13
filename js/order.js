@@ -1,6 +1,8 @@
-
-let total = JSON.parse(localStorage.getItem("TOTAL_BILL-AMOUNT"));
-document.querySelector("#totalAmount").value = total;
+function totalAmount(){
+    let total = JSON.parse(localStorage.getItem("TOTAL_BILL-AMOUNT"));
+    document.querySelector("#totalAmount").value = total;    
+};
+totalAmount();
 function orderNow() {
     const name = document.querySelector("#userName").value;
     const phonenumber = document.querySelector("#phoneNumber").value;
@@ -15,14 +17,14 @@ function orderNow() {
         if (product == null) {
             throw new Error("product is null")
         }
-        OrderValidation.validate(name, phonenumber, date, address, total, product)
+        OrderValidation.validate(name, phonenumber, date, address, totalAmount, product)
         let orderObj = {
             name: name,
             phonenumber: phonenumber,
             date: date,
             address: address,
             status: "ORDERED",
-            totalAmount: total,
+            totalAmount: totalAmount,
             Payment: "Cash On Delivery",
             productDetails: product,
             email: loggedInEmail

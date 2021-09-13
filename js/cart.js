@@ -1,11 +1,23 @@
-loginCheck();
+const cartTemplate=(item)=>{
+  let count = 1;
+  let content=`<tr> 
+    <td>${count}</td>
+    <td><img class="cartImage" src="images/${item.image_Url}" alt="img"></td>
+    <td>${item.category}</td>
+    <td>${item.name}</td>
+    <td>₹ ${item.price}</td>
+    <td>${item.quantity}</td>
+    <td>₹ ${item.price * item.quantity}</td>
+    <td><button type="submit" onclick="deleteCartData(${count - 1})">delete</button></td>
+  </tr>`;
+  count++;
+  return content;
+}
 function displayCart() {
   $("#message").show();
   setTimeout(function () {
     console.log(JSON.parse(localStorage.getItem("cartElements")));
     let cartItem = JSON.parse(localStorage.getItem("cartElements"));
-    let count = 1;
-    let sum = 0;
     let total = 0;
     let content = `<table class="table-content">
 <thead>
@@ -21,30 +33,13 @@ function displayCart() {
 </tr></thead><tbody>`;
     let end = `
   </tbody>
-  </table><div class="orderbtn"><p><a href="order.html">Ordernow</a></p></div>
-  <button type="button" onclick="emptyCart()">Empty Cart</button>`;
+  </table><div class="cartbuttons"><button onClick="window.location.href='order.html'">Ordernow</button>
+  <button type="button" onclick="emptyCart()">Empty Cart</button></div>`;
     if (cartItem) {
       for (let item of cartItem) {
         total = item.quantity * item.price;
-        content = content + `<tr> 
-    <td>${count}</td>
-    <td><img class="cartImage" src="images/${item.image_Url}" alt="img"></td>
-    <td>${item.category}</td>
-    <td>${item.name}</td>
-    <td>₹ ${item.price}</td>
-    <td>${item.quantity}</td>
-    <td>₹ ${item.price * item.quantity}</td>
-    <td><button type="submit" onclick="deleteCartData(${count - 1})">delete</button></td>
-  </tr>`
-        sum = sum + total;
-        count++;
+        content = content + cartTemplate(item);
       }
-      content += `
-  <tr>
-  <td colspan="8">Total Amount: ${sum}</td>
-  </tr>
-  `;
-      localStorage.setItem("TOTAL_BILL-AMOUNT", sum);
       content = content + end;
       document.querySelector("#table").innerHTML = content;
     }

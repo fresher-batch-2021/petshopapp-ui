@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="icon" href="/images/favicon.ico">
     <link rel="stylesheet" href="pet.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <!-- axios -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
@@ -47,7 +48,7 @@
 
 
                     <label for="address">Address</label><br>
-                    <input type="text" name="address" id="address" required placeholder="Enter your address">
+                    <textarea name="address" id="address" required placeholder="Enter your address"></textarea>
 
 
                     <label for="totalAmount">TotalAmount</label><br>
@@ -59,7 +60,7 @@
 
                     <button type="submit">Order now</button>
                     <button type="reset">Reset</button>
-                    <p><a href="./index.html">Cancel</a></p>
+                    <button type="button" onclick="window.location.href='index.html'"> Cancel</button>
 
 
 

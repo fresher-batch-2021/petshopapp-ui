@@ -1,4 +1,19 @@
-
+const viewItemTemplate= (productData)=>{
+    let content = `<div class="productImage">
+    <h1>View Item</h1>
+<img src="images/${productData.imageUrl}" alt="img"></div>
+<div class="productDetails">
+<p>${productData.productName}</p>
+<br>
+<p>For: ${productData.category}</p>
+<br>
+<p>&#8377;${productData.price}</p>
+<br>
+<p>${productData.description}</p><br>
+<button onclick="addToCart('${productData._id}','${productData.productName}','${productData.imageUrl}','${productData.price}','${productData.description}','${productData.category}')">Add to Cart</button>
+</div> `;
+return content;
+}
 function viewItem() {
     $("#message").show();
     setTimeout(function () {
@@ -7,27 +22,9 @@ function viewItem() {
 
         productService.viewItems(productId).then(res => {
             let productData = res.data;
-            let id = productData._id;
-            let name = productData.productName;
-            let category = productData.category;
-            let quantity = productData.quantity;
-            let price = productData.price;
-            let img_Url = productData.imageUrl;
-            let description = productData.description;
-            let content =
-                `<div class="productImage">
-            <h1>View Item</h1>
-        <img src="images/${img_Url}" alt="img"></div>
-        <div class="productDetails">
-        <p>${name}</p>
-        <br>
-        <p>For: ${category}</p>
-        <br>
-        <p>₹${price}</p>
-        <br>
-        <p>${description}</p><br>
-        <button onclick="addToCart('${id}','${name}','${img_Url}','${price}','${description}','${category}')">Add to Cart</button>
-       </div> `;
+            
+            let content =viewItemTemplate(productData);
+               
 
             document.querySelector("#petProduct").innerHTML = content;
 
